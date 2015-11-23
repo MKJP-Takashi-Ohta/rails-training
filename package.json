@@ -11,7 +11,7 @@
   "scripts": {
     "prepublish": "gitbook install",
     "start": "gitbook serve",
-    "build": "gitbook build",
+    "build": "gitbook build;gitbook pdf ./ _book/book.pdf",
     "textlint": "gulp textlint",
     "test": "npm-run-all --parallel textlint build"
   },
