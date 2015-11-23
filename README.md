@@ -1,3 +1,21 @@
 # Rails Study
 
-Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+## Install
+
+    npm instal
+
+for pdf / ebook
+
+    brew install Caskroom/cask/calibre
+
+## Usage
+
+    npm start # http://localhost:4000
+
+## Build
+
+    npm run build
+
+## Tests
+
+    npm test
