@@ -1,4 +1,4 @@
-# Rails Study
+# Rails Training
 
 ## Install
 
