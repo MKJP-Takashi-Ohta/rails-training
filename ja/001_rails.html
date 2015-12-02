@@ -5,7 +5,7 @@
         
         <meta charset="UTF-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-        <title>Ruby on Rails基礎 | Rails Study</title>
+        <title>Ruby on Rails基礎 | Rails Training</title>
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
         <meta name="description" content="">
         <meta name="generator" content="GitBook 2.5.2">
@@ -38,7 +38,7 @@
     
     
     
-    <link rel="prev" href="../ja/001_ruby.html" />
+    <link rel="prev" href="../ja/001_environment.html" />
     
 
         
@@ -46,7 +46,7 @@
     <body>
         
         
-    <div class="book" data-level="2.3" data-chapter-title="Ruby on Rails基礎" data-filepath="ja/001_rails.md" data-basepath=".." data-revision="Tue Nov 24 2015 06:42:38 GMT+0900 (JST)">
+    <div class="book" data-level="2.2" data-chapter-title="Ruby on Rails基礎" data-filepath="ja/001_rails.md" data-basepath=".." data-revision="Wed Dec 02 2015 09:02:40 GMT+0900 (JST)">
     
 
 <div class="book-summary">
@@ -120,29 +120,14 @@
             
         </li>
     
-        <li class="chapter " data-level="2.2" data-path="ja/001_ruby.html">
-            
-                
-                    <a href="../ja/001_ruby.html">
-                
-                        <i class="fa fa-check"></i>
-                        
-                            <b>2.2.</b>
-                        
-                        Ruby基礎
-                    </a>
-            
-            
-        </li>
-    
-        <li class="chapter active" data-level="2.3" data-path="ja/001_rails.html">
+        <li class="chapter active" data-level="2.2" data-path="ja/001_rails.html">
             
                 
                     <a href="../ja/001_rails.html">
                 
                         <i class="fa fa-check"></i>
                         
-                            <b>2.3.</b>
+                            <b>2.2.</b>
                         
                         Ruby on Rails基礎
                     </a>
@@ -252,7 +237,7 @@
     <!-- Title -->
     <h1>
         <i class="fa fa-circle-o-notch fa-spin"></i>
-        <a href="../" >Rails Study</a>
+        <a href="../" >Rails Training</a>
     </h1>
 </div>
 
@@ -263,6 +248,399 @@
                     <section class="normal" id="section-">
                     
                         <h1 id="ruby-on-rails-&#x57FA;&#x790E;">Ruby on Rails &#x57FA;&#x790E;</h1>
+<h2 id="rails&#x30A2;&#x30D7;&#x30EA;&#x30B1;&#x30FC;&#x30B7;&#x30E7;&#x30F3;&#x306E;&#x4F5C;&#x6210;">Rails&#x30A2;&#x30D7;&#x30EA;&#x30B1;&#x30FC;&#x30B7;&#x30E7;&#x30F3;&#x306E;&#x4F5C;&#x6210;</h2>
+<p>Rails&#x30A2;&#x30D7;&#x30EA;&#x30B1;&#x30FC;&#x30B7;&#x30E7;&#x30F3;&#x3092;&#x4F5C;&#x6210;&#x3057;&#x307E;&#x3059;&#x3002;</p>
+<pre><code class="lang-sh">rails new first-app
+</code></pre>
+<p>Rails&#x30A2;&#x30D7;&#x30EA;&#x30B1;&#x30FC;&#x30B7;&#x30E7;&#x30F3;&#x306F;&#x4EE5;&#x4E0B;&#x306E;&#x3088;&#x3046;&#x306A;&#x69CB;&#x6210;&#x306B;&#x306A;&#x3063;&#x3066;&#x3044;&#x307E;&#x3059;&#x3002;</p>
+<pre><code>first-app
+&#x251C;&#x2500;&#x2500; Gemfile # &#x30E9;&#x30A4;&#x30D6;&#x30E9;&#x30EA;&#x3092;&#x7BA1;&#x7406;&#x3059;&#x308B;&#x30D5;&#x30A1;&#x30A4;&#x30EB;
+&#x251C;&#x2500;&#x2500; Gemfile.lock
+&#x251C;&#x2500;&#x2500; README.rdoc
+&#x251C;&#x2500;&#x2500; Rakefile
+&#x251C;&#x2500;&#x2500; app # &#x30A2;&#x30D7;&#x30EA;&#x30B1;&#x30FC;&#x30B7;&#x30E7;&#x30F3;&#x306E;&#x30B3;&#x30FC;&#x30C9;&#x304C;&#x914D;&#x7F6E;&#x3055;&#x308C;&#x308B;
+&#x2502;   &#x251C;&#x2500;&#x2500; assets
+&#x2502;   &#x2502;   &#x251C;&#x2500;&#x2500; images
+&#x2502;   &#x2502;   &#x251C;&#x2500;&#x2500; javascripts
+&#x2502;   &#x2502;   &#x2502;   &#x2514;&#x2500;&#x2500; application.js
+&#x2502;   &#x2502;   &#x2514;&#x2500;&#x2500; stylesheets
+&#x2502;   &#x2502;       &#x2514;&#x2500;&#x2500; application.css
+&#x2502;   &#x251C;&#x2500;&#x2500; controllers
+&#x2502;   &#x2502;   &#x251C;&#x2500;&#x2500; application_controller.rb
+&#x2502;   &#x2502;   &#x2514;&#x2500;&#x2500; concerns
+&#x2502;   &#x251C;&#x2500;&#x2500; helpers
+&#x2502;   &#x2502;   &#x2514;&#x2500;&#x2500; application_helper.rb
+&#x2502;   &#x251C;&#x2500;&#x2500; mailers
+&#x2502;   &#x251C;&#x2500;&#x2500; models
+&#x2502;   &#x2502;   &#x2514;&#x2500;&#x2500; concerns
+&#x2502;   &#x2514;&#x2500;&#x2500; views
+&#x2502;       &#x2514;&#x2500;&#x2500; layouts
+&#x2502;           &#x2514;&#x2500;&#x2500; application.html.erb
+&#x251C;&#x2500;&#x2500; bin
+&#x2502;   &#x251C;&#x2500;&#x2500; bundle
+&#x2502;   &#x251C;&#x2500;&#x2500; rails
+&#x2502;   &#x251C;&#x2500;&#x2500; rake
+&#x2502;   &#x251C;&#x2500;&#x2500; setup
+&#x2502;   &#x2514;&#x2500;&#x2500; spring
+&#x251C;&#x2500;&#x2500; config # &#x30A2;&#x30D7;&#x30EA;&#x30B1;&#x30FC;&#x30B7;&#x30E7;&#x30F3;&#x306E;&#x8A2D;&#x5B9A;&#x30D5;&#x30A1;&#x30A4;&#x30EB;
+&#x2502;   &#x251C;&#x2500;&#x2500; application.rb
+&#x2502;   &#x251C;&#x2500;&#x2500; boot.rb
+&#x2502;   &#x251C;&#x2500;&#x2500; database.yml
+&#x2502;   &#x251C;&#x2500;&#x2500; environment.rb
+&#x2502;   &#x251C;&#x2500;&#x2500; environments
+&#x2502;   &#x2502;   &#x251C;&#x2500;&#x2500; development.rb
+&#x2502;   &#x2502;   &#x251C;&#x2500;&#x2500; production.rb
+&#x2502;   &#x2502;   &#x2514;&#x2500;&#x2500; test.rb
+&#x2502;   &#x251C;&#x2500;&#x2500; initializers
+&#x2502;   &#x2502;   &#x251C;&#x2500;&#x2500; assets.rb
+&#x2502;   &#x2502;   &#x251C;&#x2500;&#x2500; backtrace_silencers.rb
+&#x2502;   &#x2502;   &#x251C;&#x2500;&#x2500; cookies_serializer.rb
+&#x2502;   &#x2502;   &#x251C;&#x2500;&#x2500; filter_parameter_logging.rb
+&#x2502;   &#x2502;   &#x251C;&#x2500;&#x2500; inflections.rb
+&#x2502;   &#x2502;   &#x251C;&#x2500;&#x2500; mime_types.rb
+&#x2502;   &#x2502;   &#x251C;&#x2500;&#x2500; session_store.rb
+&#x2502;   &#x2502;   &#x2514;&#x2500;&#x2500; wrap_parameters.rb
+&#x2502;   &#x251C;&#x2500;&#x2500; locales
+&#x2502;   &#x2502;   &#x2514;&#x2500;&#x2500; en.yml
+&#x2502;   &#x251C;&#x2500;&#x2500; routes.rb
+&#x2502;   &#x2514;&#x2500;&#x2500; secrets.yml
+&#x251C;&#x2500;&#x2500; config.ru
+&#x251C;&#x2500;&#x2500; db
+&#x2502;   &#x2514;&#x2500;&#x2500; seeds.rb
+&#x251C;&#x2500;&#x2500; lib
+&#x2502;   &#x251C;&#x2500;&#x2500; assets
+&#x2502;   &#x2514;&#x2500;&#x2500; tasks
+&#x251C;&#x2500;&#x2500; log
+&#x251C;&#x2500;&#x2500; public # &#x9759;&#x7684;&#x306A;&#x30D5;&#x30A1;&#x30A4;&#x30EB;
+&#x2502;   &#x251C;&#x2500;&#x2500; 404.html
+&#x2502;   &#x251C;&#x2500;&#x2500; 422.html
+&#x2502;   &#x251C;&#x2500;&#x2500; 500.html
+&#x2502;   &#x251C;&#x2500;&#x2500; favicon.ico
+&#x2502;   &#x2514;&#x2500;&#x2500; robots.txt
+&#x251C;&#x2500;&#x2500; test
+&#x2502;   &#x251C;&#x2500;&#x2500; controllers
+&#x2502;   &#x251C;&#x2500;&#x2500; fixtures
+&#x2502;   &#x251C;&#x2500;&#x2500; helpers
+&#x2502;   &#x251C;&#x2500;&#x2500; integration
+&#x2502;   &#x251C;&#x2500;&#x2500; mailers
+&#x2502;   &#x251C;&#x2500;&#x2500; models
+&#x2502;   &#x2514;&#x2500;&#x2500; test_helper.rb
+&#x251C;&#x2500;&#x2500; tmp
+&#x2502;   &#x2514;&#x2500;&#x2500; cache
+&#x2502;       &#x2514;&#x2500;&#x2500; assets
+&#x2514;&#x2500;&#x2500; vendor
+    &#x2514;&#x2500;&#x2500; assets
+        &#x251C;&#x2500;&#x2500; javascripts
+        &#x2514;&#x2500;&#x2500; stylesheets
+</code></pre><p>Rails&#x30A2;&#x30D7;&#x30EA;&#x30B1;&#x30FC;&#x30B7;&#x30E7;&#x30F3;&#x3092;&#x8D77;&#x52D5;&#x3057;&#x307E;&#x3059;&#x3002;</p>
+<pre><code class="lang-sh"><span class="hljs-built_in">cd</span> first-app
+rails server
+</code></pre>
+<h2 id="scaffold&#x306B;&#x3088;&#x308B;&#x30B3;&#x30FC;&#x30C9;&#x306E;&#x81EA;&#x52D5;&#x751F;&#x6210;">scaffold&#x306B;&#x3088;&#x308B;&#x30B3;&#x30FC;&#x30C9;&#x306E;&#x81EA;&#x52D5;&#x751F;&#x6210;</h2>
+<p>Rails&#x3067;&#x306F;&#x3055;&#x307E;&#x3056;&#x307E;&#x306A;&#x30B3;&#x30FC;&#x30C9;&#x3092;&#x81EA;&#x52D5;&#x751F;&#x6210;&#x3067;&#x304D;&#x307E;&#x3059;&#x3002;scaffold&#x3067;&#x30A2;&#x30D7;&#x30EA;&#x30B1;&#x30FC;&#x30B7;&#x30E7;&#x30F3;&#x306E;&#x96DB;&#x5F62;&#x3092;&#x4F5C;&#x308A;&#x307E;&#x3059;&#x3002;
+scaffold&#x306F;&#x4E00;&#x89A7;&#x3001;&#x8A73;&#x7D30;&#x3001;&#x8FFD;&#x52A0;&#x3001;&#x524A;&#x9664;&#x3001;&#x5909;&#x66F4;&#x306E;&#x30B3;&#x30FC;&#x30C9;&#x3092;&#x81EA;&#x52D5;&#x751F;&#x6210;&#x3057;&#x307E;&#x3059;&#x3002;</p>
+<p>&#x3053;&#x3053;&#x3067;&#x306F; <strong>bookmark</strong> &#x3092;&#x7BA1;&#x7406;&#x3059;&#x308B;&#x6A5F;&#x80FD;&#x3092;&#x4F5C;&#x308A;&#x307E;&#x3059;&#x3002;</p>
+<pre><code class="lang-sh">rails generate scaffold bookmark title:string description:text url:string
+</code></pre>
+<p>DB&#x3092;&#x66F4;&#x65B0;&#x3057;&#x3066;&#x3001;&#x30A2;&#x30D7;&#x30EA;&#x30B1;&#x30FC;&#x30B7;&#x30E7;&#x30F3;&#x3092;&#x8D77;&#x52D5;&#x3057;&#x307E;&#x3059;&#x3002;</p>
+<pre><code class="lang-sh">bin/rake db:migrate
+rails server
+</code></pre>
+<p><a href="http://localhost:3000/bookmarks" target="_blank">http://localhost:3000/bookmarks</a>&#x3067;&#x52D5;&#x4F5C;&#x78BA;&#x8A8D;&#x304C;&#x3067;&#x304D;&#x307E;&#x3059;&#x3002;</p>
+<p>&#x30C7;&#x30FC;&#x30BF;&#x306E;&#x8FFD;&#x52A0;&#x3001;&#x524A;&#x9664;&#x3001;&#x5909;&#x66F4;&#x306A;&#x3069;&#x3092;&#x884C;&#x3063;&#x3066;&#x307F;&#x307E;&#x3057;&#x3087;&#x3046;&#x3002;</p>
+<h2 id="scaffold&#x3067;&#x751F;&#x6210;&#x3055;&#x308C;&#x308B;&#x30D5;&#x30A1;&#x30A4;&#x30EB;">scaffold&#x3067;&#x751F;&#x6210;&#x3055;&#x308C;&#x308B;&#x30D5;&#x30A1;&#x30A4;&#x30EB;</h2>
+<p>scaffold&#x3067;&#x751F;&#x6210;&#x3055;&#x308C;&#x305F;&#x30D5;&#x30A1;&#x30A4;&#x30EB;&#x3092;&#x78BA;&#x8A8D;&#x3057;&#x3066;&#x3044;&#x304D;&#x307E;&#x3059;&#x3002;scaffold&#x3067;&#x306F;&#x3053;&#x306E;&#x3088;&#x3046;&#x306A;&#x5B9F;&#x884C;&#x7D50;&#x679C;&#x304C;&#x51FA;&#x529B;&#x3055;&#x308C;&#x307E;&#x3059;&#x3002;</p>
+<pre><code class="lang-sh">% rails generate scaffold bookmark title:string description:text url:string
+      invoke  active_record
+      create    db/migrate/<span class="hljs-number">20151129091144</span>_create_bookmarks.rb
+      create    app/models/bookmark.rb
+      invoke    <span class="hljs-built_in">test</span>_unit
+      create      <span class="hljs-built_in">test</span>/models/bookmark_test.rb
+      create      <span class="hljs-built_in">test</span>/fixtures/bookmarks.yml
+      invoke  resource_route
+       route    resources :bookmarks
+      invoke  scaffold_controller
+      create    app/controllers/bookmarks_controller.rb
+      invoke    erb
+      create      app/views/bookmarks
+      create      app/views/bookmarks/index.html.erb
+      create      app/views/bookmarks/edit.html.erb
+      create      app/views/bookmarks/show.html.erb
+      create      app/views/bookmarks/new.html.erb
+      create      app/views/bookmarks/_form.html.erb
+      invoke    <span class="hljs-built_in">test</span>_unit
+      create      <span class="hljs-built_in">test</span>/controllers/bookmarks_controller_test.rb
+      invoke    helper
+      create      app/helpers/bookmarks_helper.rb
+      invoke      <span class="hljs-built_in">test</span>_unit
+      invoke    jbuilder
+      create      app/views/bookmarks/index.json.jbuilder
+      create      app/views/bookmarks/show.json.jbuilder
+      invoke  assets
+      invoke    coffee
+      create      app/assets/javascripts/bookmarks.coffee
+      invoke    scss
+      create      app/assets/stylesheets/bookmarks.scss
+      invoke  scss
+      create    app/assets/stylesheets/scaffolds.scss
+</code></pre>
+<p>scaffold&#x3067;&#x306F;&#x4EE5;&#x4E0B;&#x306E;&#x3088;&#x3046;&#x306A;&#x30D5;&#x30A1;&#x30A4;&#x30EB;&#x3092;&#x751F;&#x6210;&#x3057;&#x3066;&#x3044;&#x307E;&#x3059;&#x3002;</p>
+<ul>
+<li>active_record<ul>
+<li>&#x30C6;&#x30FC;&#x30D6;&#x30EB;&#x306E;&#x4F5C;&#x6210;</li>
+<li>&#x30E2;&#x30C7;&#x30EB;&#x306E;&#x4F5C;&#x6210;</li>
+</ul>
+</li>
+<li>route&#x306E;&#x8A2D;&#x5B9A;</li>
+<li>controller<ul>
+<li>view&#x306E;&#x4F5C;&#x6210;</li>
+<li>helper&#x306E;&#x4F5C;&#x6210;</li>
+<li>jbuilder(json&#x30C6;&#x30F3;&#x30D7;&#x30EC;&#x30FC;&#x30C8;)&#x306E;&#x4F5C;&#x6210;</li>
+</ul>
+</li>
+<li>assets<ul>
+<li>CoffeeScript&#x306E;&#x4F5C;&#x6210;</li>
+<li>Scss&#x306E;&#x4F5C;&#x6210;</li>
+</ul>
+</li>
+</ul>
+<p>&#x5B9F;&#x969B;&#x306B;&#x30D5;&#x30A1;&#x30A4;&#x30EB;&#x3092;&#x958B;&#x3044;&#x3066;&#x78BA;&#x8A8D;&#x3057;&#x3066;&#x898B;&#x307E;&#x3057;&#x3087;&#x3046;&#x3002;</p>
+<h3 id="migration">migration</h3>
+<p>db/migrate/20151129091144_create_bookmarks.rb</p>
+<pre><code class="lang-ruby"><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">CreateBookmarks</span> <span class="hljs-inheritance">&lt; <span class="hljs-parent">ActiveRecord::Migration</span></span></span>
+  <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">change</span></span>
+    create_table <span class="hljs-symbol">:bookmarks</span> <span class="hljs-keyword">do</span> |t|
+      t.string <span class="hljs-symbol">:title</span>
+      t.text <span class="hljs-symbol">:description</span>
+      t.string <span class="hljs-symbol">:url</span>
+
+      t.timestamps <span class="hljs-symbol">null:</span> <span class="hljs-keyword">false</span>
+    <span class="hljs-keyword">end</span>
+  <span class="hljs-keyword">end</span>
+<span class="hljs-keyword">end</span>
+</code></pre>
+<h3 id="routes">routes</h3>
+<p>config/routes.rb</p>
+<pre><code class="lang-ruby"><span class="hljs-constant">Rails</span>.application.routes.draw <span class="hljs-keyword">do</span>
+  resources <span class="hljs-symbol">:bookmarks</span>
+  <span class="hljs-comment"># The priority is based upon order of creation: first created -&gt; highest priority.</span>
+  <span class="hljs-comment"># See how all your routes lay out with &quot;rake routes&quot;.</span>
+
+  <span class="hljs-comment"># You can have the root of your site routed with &quot;root&quot;</span>
+  <span class="hljs-comment"># root &apos;welcome#index&apos;</span>
+
+  <span class="hljs-comment"># Example of regular route:</span>
+  <span class="hljs-comment">#   get &apos;products/:id&apos; =&gt; &apos;catalog#view&apos;</span>
+
+  <span class="hljs-comment"># Example of named route that can be invoked with purchase_url(id: product.id)</span>
+  <span class="hljs-comment">#   get &apos;products/:id/purchase&apos; =&gt; &apos;catalog#purchase&apos;, as: :purchase</span>
+
+  <span class="hljs-comment"># Example resource route (maps HTTP verbs to controller actions automatically):</span>
+  <span class="hljs-comment">#   resources :products</span>
+
+  <span class="hljs-comment"># Example resource route with options:</span>
+  <span class="hljs-comment">#   resources :products do</span>
+  <span class="hljs-comment">#     member do</span>
+  <span class="hljs-comment">#       get &apos;short&apos;</span>
+  <span class="hljs-comment">#       post &apos;toggle&apos;</span>
+  <span class="hljs-comment">#     end</span>
+  <span class="hljs-comment">#</span>
+  <span class="hljs-comment">#     collection do</span>
+  <span class="hljs-comment">#       get &apos;sold&apos;</span>
+  <span class="hljs-comment">#     end</span>
+  <span class="hljs-comment">#   end</span>
+
+  <span class="hljs-comment"># Example resource route with sub-resources:</span>
+  <span class="hljs-comment">#   resources :products do</span>
+  <span class="hljs-comment">#     resources :comments, :sales</span>
+  <span class="hljs-comment">#     resource :seller</span>
+  <span class="hljs-comment">#   end</span>
+
+  <span class="hljs-comment"># Example resource route with more complex sub-resources:</span>
+  <span class="hljs-comment">#   resources :products do</span>
+  <span class="hljs-comment">#     resources :comments</span>
+  <span class="hljs-comment">#     resources :sales do</span>
+  <span class="hljs-comment">#       get &apos;recent&apos;, on: :collection</span>
+  <span class="hljs-comment">#     end</span>
+  <span class="hljs-comment">#   end</span>
+
+  <span class="hljs-comment"># Example resource route with concerns:</span>
+  <span class="hljs-comment">#   concern :toggleable do</span>
+  <span class="hljs-comment">#     post &apos;toggle&apos;</span>
+  <span class="hljs-comment">#   end</span>
+  <span class="hljs-comment">#   resources :posts, concerns: :toggleable</span>
+  <span class="hljs-comment">#   resources :photos, concerns: :toggleable</span>
+
+  <span class="hljs-comment"># Example resource route within a namespace:</span>
+  <span class="hljs-comment">#   namespace :admin do</span>
+  <span class="hljs-comment">#     # Directs /admin/products/* to Admin::ProductsController</span>
+  <span class="hljs-comment">#     # (app/controllers/admin/products_controller.rb)</span>
+  <span class="hljs-comment">#     resources :products</span>
+  <span class="hljs-comment">#   end</span>
+<span class="hljs-keyword">end</span>
+</code></pre>
+<h3 id="models">models</h3>
+<p>app/models/bookmark.rb</p>
+<pre><code class="lang-ruby"><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Bookmark</span> <span class="hljs-inheritance">&lt; <span class="hljs-parent">ActiveRecord::Base</span></span></span>
+<span class="hljs-keyword">end</span>
+</code></pre>
+<h3 id="controllers">controllers</h3>
+<p>app/controllers/bookmarks_controller.rb</p>
+<pre><code class="lang-ruby"><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">BookmarksController</span> <span class="hljs-inheritance">&lt; <span class="hljs-parent">ApplicationController</span></span></span>
+  before_action <span class="hljs-symbol">:set_bookmark</span>, <span class="hljs-symbol">only:</span> [<span class="hljs-symbol">:show</span>, <span class="hljs-symbol">:edit</span>, <span class="hljs-symbol">:update</span>, <span class="hljs-symbol">:destroy</span>]
+
+  <span class="hljs-comment"># GET /bookmarks</span>
+  <span class="hljs-comment"># GET /bookmarks.json</span>
+  <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">index</span></span>
+    <span class="hljs-variable">@bookmarks</span> = <span class="hljs-constant">Bookmark</span>.all
+  <span class="hljs-keyword">end</span>
+
+  <span class="hljs-comment"># GET /bookmarks/1</span>
+  <span class="hljs-comment"># GET /bookmarks/1.json</span>
+  <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">show</span></span>
+  <span class="hljs-keyword">end</span>
+
+  <span class="hljs-comment"># GET /bookmarks/new</span>
+  <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">new</span></span>
+    <span class="hljs-variable">@bookmark</span> = <span class="hljs-constant">Bookmark</span>.new
+  <span class="hljs-keyword">end</span>
+
+  <span class="hljs-comment"># GET /bookmarks/1/edit</span>
+  <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">edit</span></span>
+  <span class="hljs-keyword">end</span>
+
+  <span class="hljs-comment"># POST /bookmarks</span>
+  <span class="hljs-comment"># POST /bookmarks.json</span>
+  <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">create</span></span>
+    <span class="hljs-variable">@bookmark</span> = <span class="hljs-constant">Bookmark</span>.new(bookmark_params)
+
+    respond_to <span class="hljs-keyword">do</span> |format|
+      <span class="hljs-keyword">if</span> <span class="hljs-variable">@bookmark</span>.save
+        format.html { redirect_to <span class="hljs-variable">@bookmark</span>, <span class="hljs-symbol">notice:</span> <span class="hljs-string">&apos;Bookmark was successfully created.&apos;</span> }
+        format.json { render <span class="hljs-symbol">:show</span>, <span class="hljs-symbol">status:</span> <span class="hljs-symbol">:created</span>, <span class="hljs-symbol">location:</span> <span class="hljs-variable">@bookmark</span> }
+      <span class="hljs-keyword">else</span>
+        format.html { render <span class="hljs-symbol">:new</span> }
+        format.json { render <span class="hljs-symbol">json:</span> <span class="hljs-variable">@bookmark</span>.errors, <span class="hljs-symbol">status:</span> <span class="hljs-symbol">:unprocessable_entity</span> }
+      <span class="hljs-keyword">end</span>
+    <span class="hljs-keyword">end</span>
+  <span class="hljs-keyword">end</span>
+
+  <span class="hljs-comment"># PATCH/PUT /bookmarks/1</span>
+  <span class="hljs-comment"># PATCH/PUT /bookmarks/1.json</span>
+  <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">update</span></span>
+    respond_to <span class="hljs-keyword">do</span> |format|
+      <span class="hljs-keyword">if</span> <span class="hljs-variable">@bookmark</span>.update(bookmark_params)
+        format.html { redirect_to <span class="hljs-variable">@bookmark</span>, <span class="hljs-symbol">notice:</span> <span class="hljs-string">&apos;Bookmark was successfully updated.&apos;</span> }
+        format.json { render <span class="hljs-symbol">:show</span>, <span class="hljs-symbol">status:</span> <span class="hljs-symbol">:ok</span>, <span class="hljs-symbol">location:</span> <span class="hljs-variable">@bookmark</span> }
+      <span class="hljs-keyword">else</span>
+        format.html { render <span class="hljs-symbol">:edit</span> }
+        format.json { render <span class="hljs-symbol">json:</span> <span class="hljs-variable">@bookmark</span>.errors, <span class="hljs-symbol">status:</span> <span class="hljs-symbol">:unprocessable_entity</span> }
+      <span class="hljs-keyword">end</span>
+    <span class="hljs-keyword">end</span>
+  <span class="hljs-keyword">end</span>
+
+  <span class="hljs-comment"># DELETE /bookmarks/1</span>
+  <span class="hljs-comment"># DELETE /bookmarks/1.json</span>
+  <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">destroy</span></span>
+    <span class="hljs-variable">@bookmark</span>.destroy
+    respond_to <span class="hljs-keyword">do</span> |format|
+      format.html { redirect_to bookmarks_url, <span class="hljs-symbol">notice:</span> <span class="hljs-string">&apos;Bookmark was successfully destroyed.&apos;</span> }
+      format.json { head <span class="hljs-symbol">:no_content</span> }
+    <span class="hljs-keyword">end</span>
+  <span class="hljs-keyword">end</span>
+
+  private
+    <span class="hljs-comment"># Use callbacks to share common setup or constraints between actions.</span>
+    <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">set_bookmark</span></span>
+      <span class="hljs-variable">@bookmark</span> = <span class="hljs-constant">Bookmark</span>.find(params[<span class="hljs-symbol">:id</span>])
+    <span class="hljs-keyword">end</span>
+
+    <span class="hljs-comment"># Never trust parameters from the scary internet, only allow the white list through.</span>
+    <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">bookmark_params</span></span>
+      params.<span class="hljs-keyword">require</span>(<span class="hljs-symbol">:bookmark</span>).permit(<span class="hljs-symbol">:title</span>, <span class="hljs-symbol">:description</span>, <span class="hljs-symbol">:url</span>)
+    <span class="hljs-keyword">end</span>
+<span class="hljs-keyword">end</span>
+</code></pre>
+<h3 id="helpers">helpers</h3>
+<p>app/helpers/bookmarks_helper.rb</p>
+<pre><code>module BookmarksHelper
+end
+</code></pre><h3 id="views">views</h3>
+<p>app/views/bookmarks/index.html.erb</p>
+<pre><code class="lang-html"><span class="hljs-tag">&lt;<span class="hljs-title">p</span> <span class="hljs-attribute">id</span>=<span class="hljs-value">&quot;notice&quot;</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-title">%=</span> <span class="hljs-attribute">notice</span> %&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-title">p</span>&gt;</span>
+
+<span class="hljs-tag">&lt;<span class="hljs-title">h1</span>&gt;</span>Listing Bookmarks<span class="hljs-tag">&lt;/<span class="hljs-title">h1</span>&gt;</span>
+
+<span class="hljs-tag">&lt;<span class="hljs-title">table</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-title">thead</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">tr</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-title">th</span>&gt;</span>Title<span class="hljs-tag">&lt;/<span class="hljs-title">th</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-title">th</span>&gt;</span>Description<span class="hljs-tag">&lt;/<span class="hljs-title">th</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-title">th</span>&gt;</span>Url<span class="hljs-tag">&lt;/<span class="hljs-title">th</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-title">th</span> <span class="hljs-attribute">colspan</span>=<span class="hljs-value">&quot;3&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-title">th</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-title">tr</span>&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-title">thead</span>&gt;</span>
+
+  <span class="hljs-tag">&lt;<span class="hljs-title">tbody</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">%</span> @<span class="hljs-attribute">bookmarks.each</span> <span class="hljs-attribute">do</span> |<span class="hljs-attribute">bookmark</span>| %&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-title">tr</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-title">td</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-title">%=</span> <span class="hljs-attribute">bookmark.title</span> %&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-title">td</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-title">td</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-title">%=</span> <span class="hljs-attribute">bookmark.description</span> %&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-title">td</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-title">td</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-title">%=</span> <span class="hljs-attribute">bookmark.url</span> %&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-title">td</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-title">td</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-title">%=</span> <span class="hljs-attribute">link_to</span> &apos;<span class="hljs-attribute">Show</span>&apos;, <span class="hljs-attribute">bookmark</span> %&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-title">td</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-title">td</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-title">%=</span> <span class="hljs-attribute">link_to</span> &apos;<span class="hljs-attribute">Edit</span>&apos;, <span class="hljs-attribute">edit_bookmark_path</span>(<span class="hljs-attribute">bookmark</span>) %&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-title">td</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-title">td</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-title">%=</span> <span class="hljs-attribute">link_to</span> &apos;<span class="hljs-attribute">Destroy</span>&apos;, <span class="hljs-attribute">bookmark</span>, <span class="hljs-attribute">method:</span> <span class="hljs-attribute">:delete</span>, <span class="hljs-attribute">data:</span> { <span class="hljs-attribute">confirm:</span> &apos;<span class="hljs-attribute">Are</span> <span class="hljs-attribute">you</span> <span class="hljs-attribute">sure</span>?&apos; } %&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-title">td</span>&gt;</span>
+      <span class="hljs-tag">&lt;/<span class="hljs-title">tr</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">%</span> <span class="hljs-attribute">end</span> %&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-title">tbody</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-title">table</span>&gt;</span>
+
+<span class="hljs-tag">&lt;<span class="hljs-title">br</span>&gt;</span>
+
+<span class="hljs-tag">&lt;<span class="hljs-title">%=</span> <span class="hljs-attribute">link_to</span> &apos;<span class="hljs-attribute">New</span> <span class="hljs-attribute">Bookmark</span>&apos;, <span class="hljs-attribute">new_bookmark_path</span> %&gt;</span>
+</code></pre>
+<p>app/views/bookmarks/_form.html.erb</p>
+<pre><code class="lang-html"><span class="hljs-tag">&lt;<span class="hljs-title">%=</span> <span class="hljs-attribute">form_for</span>(@<span class="hljs-attribute">bookmark</span>) <span class="hljs-attribute">do</span> |<span class="hljs-attribute">f</span>| %&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-title">%</span> <span class="hljs-attribute">if</span> @<span class="hljs-attribute">bookmark.errors.any</span>? %&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">id</span>=<span class="hljs-value">&quot;error_explanation&quot;</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-title">h2</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-title">%=</span> <span class="hljs-attribute">pluralize</span>(@<span class="hljs-attribute">bookmark.errors.count</span>, &quot;<span class="hljs-attribute">error</span>&quot;) %&gt;</span> prohibited this bookmark from being saved:<span class="hljs-tag">&lt;/<span class="hljs-title">h2</span>&gt;</span>
+
+      <span class="hljs-tag">&lt;<span class="hljs-title">ul</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-title">%</span> @<span class="hljs-attribute">bookmark.errors.full_messages.each</span> <span class="hljs-attribute">do</span> |<span class="hljs-attribute">message</span>| %&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-title">li</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-title">%=</span> <span class="hljs-attribute">message</span> %&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-title">li</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-title">%</span> <span class="hljs-attribute">end</span> %&gt;</span>
+      <span class="hljs-tag">&lt;/<span class="hljs-title">ul</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-title">%</span> <span class="hljs-attribute">end</span> %&gt;</span>
+
+  <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;field&quot;</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">%=</span> <span class="hljs-attribute">f.label</span> <span class="hljs-attribute">:title</span> %&gt;</span><span class="hljs-tag">&lt;<span class="hljs-title">br</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">%=</span> <span class="hljs-attribute">f.text_field</span> <span class="hljs-attribute">:title</span> %&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;field&quot;</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">%=</span> <span class="hljs-attribute">f.label</span> <span class="hljs-attribute">:description</span> %&gt;</span><span class="hljs-tag">&lt;<span class="hljs-title">br</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">%=</span> <span class="hljs-attribute">f.text_area</span> <span class="hljs-attribute">:description</span> %&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;field&quot;</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">%=</span> <span class="hljs-attribute">f.label</span> <span class="hljs-attribute">:url</span> %&gt;</span><span class="hljs-tag">&lt;<span class="hljs-title">br</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">%=</span> <span class="hljs-attribute">f.text_field</span> <span class="hljs-attribute">:url</span> %&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;actions&quot;</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">%=</span> <span class="hljs-attribute">f.submit</span> %&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-title">%</span> <span class="hljs-attribute">end</span> %&gt;</span>
+</code></pre>
+<p>app/views/bookmarks/index.json.jbuilder</p>
+<pre><code class="lang-ruby">json.array!(<span class="hljs-variable">@bookmarks</span>) <span class="hljs-keyword">do</span> |bookmark|
+  json.extract! bookmark, <span class="hljs-symbol">:id</span>, <span class="hljs-symbol">:title</span>, <span class="hljs-symbol">:description</span>, <span class="hljs-symbol">:url</span>
+  json.url bookmark_url(bookmark, <span class="hljs-symbol">format:</span> <span class="hljs-symbol">:json</span>)
+<span class="hljs-keyword">end</span>
+</code></pre>
+<h2 id="&#x8AB2;&#x984C;">&#x8AB2;&#x984C;</h2>
+<ol>
+<li>link_to&#x3092;&#x4F7F;&#x3063;&#x3066;URL&#x3092;&#x30EA;&#x30F3;&#x30AF;&#x306B;&#x3057;&#x3066;&#x307F;&#x307E;&#x3057;&#x3087;&#x3046;&#x3002;</li>
+<li>&#x30BF;&#x30A4;&#x30C8;&#x30EB;&#x3068;URL&#x3092;&#x5FC5;&#x9808;&#x9805;&#x76EE;&#x306B;&#x3057;&#x307E;&#x3057;&#x3087;&#x3046;&#x3002;</li>
+</ol>
 
                     
                     </section>
@@ -273,7 +651,7 @@
         </div>
 
         
-        <a href="../ja/001_ruby.html" class="navigation navigation-prev navigation-unique" aria-label="Previous page: Ruby基礎"><i class="fa fa-angle-left"></i></a>
+        <a href="../ja/001_environment.html" class="navigation navigation-prev navigation-unique" aria-label="Previous page: 環境構築"><i class="fa fa-angle-left"></i></a>
         
         
     </div>
@@ -298,9 +676,13 @@
     <script src="../gitbook/plugins/gitbook-plugin-fontsettings/buttons.js"></script>
     
 
+    
+    <script src="../gitbook/plugins/gitbook-plugin-livereload/plugin.js"></script>
+    
+
 <script>
 require(["gitbook"], function(gitbook) {
-    var config = {"highlight":{},"search":{},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2}};
+    var config = {"highlight":{},"search":{},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"livereload":{}};
     gitbook.start(config);
 });
 </script>
