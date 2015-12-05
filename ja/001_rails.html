@@ -46,7 +46,7 @@
     <body>
         
         
-    <div class="book" data-level="2.2" data-chapter-title="Ruby on Rails基礎" data-filepath="ja/001_rails.md" data-basepath=".." data-revision="Wed Dec 02 2015 09:05:20 GMT+0900 (JST)">
+    <div class="book" data-level="2.2" data-chapter-title="Ruby on Rails基礎" data-filepath="ja/001_rails.md" data-basepath=".." data-revision="Sat Dec 05 2015 11:40:55 GMT+0900 (JST)">
     
 
 <div class="book-summary">
@@ -479,6 +479,18 @@ rails server
   <span class="hljs-comment">#   end</span>
 <span class="hljs-keyword">end</span>
 </code></pre>
+<p><code>rake routes</code> &#x3067;&#x5B9A;&#x7FA9;&#x3055;&#x308C;&#x3044;&#x3066;&#x3044;&#x308B;routes&#x3092;&#x78BA;&#x8A8D;&#x3067;&#x304D;&#x307E;&#x3059;&#x3002;</p>
+<pre><code class="lang-sh">% rake routes
+       Prefix Verb   URI Pattern                   Controller<span class="hljs-comment">#Action</span>
+    bookmarks GET    /bookmarks(.:format)          bookmarks<span class="hljs-comment">#index</span>
+              POST   /bookmarks(.:format)          bookmarks<span class="hljs-comment">#create</span>
+ new_bookmark GET    /bookmarks/new(.:format)      bookmarks<span class="hljs-comment">#new</span>
+edit_bookmark GET    /bookmarks/:id/edit(.:format) bookmarks<span class="hljs-comment">#edit</span>
+     bookmark GET    /bookmarks/:id(.:format)      bookmarks<span class="hljs-comment">#show</span>
+              PATCH  /bookmarks/:id(.:format)      bookmarks<span class="hljs-comment">#update</span>
+              PUT    /bookmarks/:id(.:format)      bookmarks<span class="hljs-comment">#update</span>
+              DELETE /bookmarks/:id(.:format)      bookmarks<span class="hljs-comment">#destroy</span>
+</code></pre>
 <h3 id="models">models</h3>
 <p>app/models/bookmark.rb</p>
 <pre><code class="lang-ruby"><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Bookmark</span> <span class="hljs-inheritance">&lt; <span class="hljs-parent">ActiveRecord::Base</span></span></span>
@@ -636,6 +648,163 @@ end
   json.url bookmark_url(bookmark, <span class="hljs-symbol">format:</span> <span class="hljs-symbol">:json</span>)
 <span class="hljs-keyword">end</span>
 </code></pre>
+<h2 id="console">console</h2>
+<p><code>rails console</code> &#x3067;&#x5BFE;&#x8A71;&#x7684;&#x306B;&#x64CD;&#x4F5C;&#x3067;&#x304D;&#x307E;&#x3059;&#x3002;</p>
+<pre><code class="lang-sh">% rails console
+Loading development environment (Rails <span class="hljs-number">4.2</span>.<span class="hljs-number">4</span>)
+irb(main):<span class="hljs-number">001</span>:<span class="hljs-number">0</span>&gt;
+</code></pre>
+<p><code>Bookmark.last</code> &#x3067;&#x6700;&#x5F8C;&#x306B;&#x767B;&#x9332;&#x3057;&#x305F;Bookmark&#x3092;&#x53D6;&#x5F97;&#x3057;&#x307E;&#x3059;&#x3002;</p>
+<pre><code class="lang-ruby"><span class="hljs-prompt">irb(main):001:0&gt;</span> <span class="hljs-constant">Bookmark</span>.last
+  <span class="hljs-constant">Bookmark</span> <span class="hljs-constant">Load</span> (<span class="hljs-number">0</span>.<span class="hljs-number">2</span>ms)  <span class="hljs-constant">SELECT</span>  <span class="hljs-string">&quot;bookmarks&quot;</span>.* <span class="hljs-constant">FROM</span> <span class="hljs-string">&quot;bookmarks&quot;</span>  <span class="hljs-constant">ORDER</span> <span class="hljs-constant">BY</span> <span class="hljs-string">&quot;bookmarks&quot;</span>.<span class="hljs-string">&quot;id&quot;</span> <span class="hljs-constant">DESC</span> <span class="hljs-constant">LIMIT</span> <span class="hljs-number">1</span>
+<span class="hljs-status">=&gt;</span> <span class="hljs-value">#&lt;Bookmark id: 1, title: &quot;sadah&quot;, description: &quot;My portfolio site.&quot;, url: &quot;https://sadah.github.io&quot;, created_at: &quot;2015-12-02 00:26:31&quot;, updated_at: &quot;2015-12-02 00:26:31&quot;&gt;</span>
+<span class="hljs-prompt">irb(main):002:0&gt;</span>
+</code></pre>
+<p>&#x3053;&#x306E;&#x3088;&#x3046;&#x306B;&#x30C7;&#x30FC;&#x30BF;&#x3092;&#x4F5C;&#x6210;&#x3059;&#x308B;&#x3053;&#x3068;&#x3082;&#x3067;&#x304D;&#x307E;&#x3059;&#x3002;</p>
+<pre><code class="lang-ruby"><span class="hljs-prompt">irb(main):002:0&gt;</span> bookmark = <span class="hljs-constant">Bookmark</span>.create(<span class="hljs-symbol">title:</span> <span class="hljs-string">&quot;test&quot;</span>, <span class="hljs-symbol">description:</span> <span class="hljs-string">&quot;test bookmark&quot;</span>, <span class="hljs-symbol">url:</span> <span class="hljs-string">&quot;http://exapmle.com&quot;</span>)
+   (<span class="hljs-number">4.0</span>ms)  <span class="hljs-keyword">begin</span> transaction
+  <span class="hljs-constant">SQL</span> (<span class="hljs-number">5.1</span>ms)  <span class="hljs-constant">INSERT</span> <span class="hljs-constant">INTO</span> <span class="hljs-string">&quot;bookmarks&quot;</span> (<span class="hljs-string">&quot;title&quot;</span>, <span class="hljs-string">&quot;description&quot;</span>, <span class="hljs-string">&quot;url&quot;</span>, <span class="hljs-string">&quot;created_at&quot;</span>, <span class="hljs-string">&quot;updated_at&quot;</span>) <span class="hljs-constant">VALUES</span> (?, ?, ?, ?, ?)  [[<span class="hljs-string">&quot;title&quot;</span>, <span class="hljs-string">&quot;test&quot;</span>], [<span class="hljs-string">&quot;description&quot;</span>, <span class="hljs-string">&quot;test bookmark&quot;</span>], [<span class="hljs-string">&quot;url&quot;</span>, <span class="hljs-string">&quot;http://exapmle.com&quot;</span>], [<span class="hljs-string">&quot;created_at&quot;</span>, <span class="hljs-string">&quot;2015-12-03 00:04:59.802792&quot;</span>], [<span class="hljs-string">&quot;updated_at&quot;</span>, <span class="hljs-string">&quot;2015-12-03 00:04:59.802792&quot;</span>]]
+   (<span class="hljs-number">1.0</span>ms)  commit transaction
+<span class="hljs-status">=&gt;</span> <span class="hljs-value">#&lt;Bookmark id: 2, title: &quot;test&quot;, description: &quot;test bookmark&quot;, url: &quot;http://exapmle.com&quot;, created_at: &quot;2015-12-03 00:04:59&quot;, updated_at: &quot;2015-12-03 00:04:59&quot;&gt;</span>
+<span class="hljs-prompt">irb(main):003:0&gt;</span>
+</code></pre>
+<p>Active Record&#x306E;&#x30AF;&#x30A8;&#x30EA;&#x306B;&#x3064;&#x3044;&#x3066;&#x306F;&#x3053;&#x3061;&#x3089;&#x304C;&#x308F;&#x304B;&#x308A;&#x3084;&#x3059;&#x3044;&#x3067;&#x3059;&#x3002;</p>
+<ul>
+<li><a href="http://railsguides.jp/active_record_querying.html" target="_blank">Active Record &#x30AF;&#x30A8;&#x30EA;&#x30A4;&#x30F3;&#x30BF;&#x30FC;&#x30D5;&#x30A7;&#x30A4;&#x30B9; | Rails &#x30AC;&#x30A4;&#x30C9;</a></li>
+</ul>
+<h2 id="debug">debug</h2>
+<p>pry&#x306F;irb(&#x6A19;&#x6E96;&#x306E;Ruby&#x30B3;&#x30F3;&#x30BD;&#x30FC;&#x30EB;)&#x306B;&#x4EE3;&#x308F;&#x308B;&#x3001;&#x30D1;&#x30EF;&#x30D5;&#x30EB;&#x306A;&#x30B3;&#x30F3;&#x30BD;&#x30FC;&#x30EB;&#x3067;&#x3059;&#x3002;</p>
+<ul>
+<li><a href="https://github.com/pry/pry" target="_blank">pry/pry</a></li>
+</ul>
+<p>Gemfile&#x306B;pry&#x306E;gem&#x3092;&#x8FFD;&#x52A0;&#x3057;&#x307E;&#x3059;&#x3002;</p>
+<pre><code class="lang-ruby">group <span class="hljs-symbol">:development</span>, <span class="hljs-symbol">:test</span> <span class="hljs-keyword">do</span>
+  <span class="hljs-comment"># Call &apos;byebug&apos; anywhere in the code to stop execution and get a debugger console</span>
+  gem <span class="hljs-string">&apos;byebug&apos;</span>
+  gem <span class="hljs-string">&apos;pry&apos;</span>
+  gem <span class="hljs-string">&apos;pry-doc&apos;</span>
+  gem <span class="hljs-string">&apos;pry-byebug&apos;</span>
+  gem <span class="hljs-string">&apos;pry-rails&apos;</span>
+  gem <span class="hljs-string">&apos;awesome_print&apos;</span>
+<span class="hljs-keyword">end</span>
+</code></pre>
+<p>&#x305D;&#x308C;&#x305E;&#x308C;&#x306E;gem&#x306F;&#x3053;&#x306E;&#x3088;&#x3046;&#x306A;&#x6A5F;&#x80FD;&#x3092;&#x6301;&#x3061;&#x307E;&#x3059;&#x3002;</p>
+<table>
+<thead>
+<tr>
+<th>gem</th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>pry</td>
+<td>pry&#x672C;&#x4F53;</td>
+</tr>
+<tr>
+<td>pry-doc</td>
+<td>&#x30C9;&#x30AD;&#x30E5;&#x30E1;&#x30F3;&#x30C8;&#x3084;&#x30E1;&#x30BD;&#x30C3;&#x30C9;&#x3092;&#x8868;&#x793A;&#x3059;&#x308B;</td>
+</tr>
+<tr>
+<td>pry-byebug</td>
+<td>&#x30C7;&#x30D0;&#x30C3;&#x30B0;&#x3092;&#x3067;&#x304D;&#x308B;&#x3088;&#x3046;&#x306B;&#x3059;&#x308B;</td>
+</tr>
+<tr>
+<td>pry-rails</td>
+<td>Rails&#x306E;&#x30B3;&#x30F3;&#x30BD;&#x30FC;&#x30EB;&#x3092;pry&#x306B;&#x3059;&#x308B;</td>
+</tr>
+<tr>
+<td>awesome_print</td>
+<td>&#x30C7;&#x30FC;&#x30BF;&#x69CB;&#x9020;&#x306A;&#x3069;&#x3092;&#x308F;&#x304B;&#x308A;&#x3084;&#x3059;&#x304F;&#x8868;&#x793A;&#x3059;&#x308B;</td>
+</tr>
+</tbody>
+</table>
+<p>Rails&#x30B3;&#x30F3;&#x30BD;&#x30FC;&#x30EB;&#x3092;&#x7ACB;&#x3061;&#x4E0A;&#x3052;&#x308B;&#x3068;&#x3001;pry&#x304C;&#x8D77;&#x52D5;&#x3057;&#x3066;&#x3044;&#x308B;&#x3053;&#x3068;&#x304C;&#x308F;&#x304B;&#x308A;&#x307E;&#x3059;&#x3002;</p>
+<pre><code class="lang-ruby">% rails c
+<span class="hljs-constant">Loading</span> development environment (<span class="hljs-constant">Rails</span> <span class="hljs-number">4.2</span>.<span class="hljs-number">4</span>)
+[<span class="hljs-number">1</span>] pry(main)&gt;
+</code></pre>
+<p>show-doc&#x3067;&#x30C9;&#x30AD;&#x30E5;&#x30E1;&#x30F3;&#x30C8;&#x304C;&#x8868;&#x793A;&#x3055;&#x308C;&#x307E;&#x3059;&#x3002;</p>
+<pre><code class="lang-ruby">[<span class="hljs-number">1</span>] pry(main)&gt; show-doc <span class="hljs-constant">String</span>.<span class="hljs-keyword">nil</span>?
+
+<span class="hljs-constant">From</span><span class="hljs-symbol">:</span> object.c (<span class="hljs-constant">C</span> <span class="hljs-constant">Method</span>)<span class="hljs-symbol">:</span>
+<span class="hljs-constant">Owner</span><span class="hljs-symbol">:</span> <span class="hljs-constant">Kernel</span>
+<span class="hljs-constant">Visibility</span><span class="hljs-symbol">:</span> public
+<span class="hljs-constant">Signature</span><span class="hljs-symbol">:</span> <span class="hljs-keyword">nil</span>?()
+<span class="hljs-constant">Number</span> of <span class="hljs-symbol">lines:</span> <span class="hljs-number">4</span>
+
+<span class="hljs-constant">Only</span> the object <span class="hljs-keyword">nil</span> responds <span class="hljs-keyword">true</span> to <span class="hljs-keyword">nil</span>?.
+
+   <span class="hljs-constant">Object</span>.new.<span class="hljs-keyword">nil</span>?   <span class="hljs-comment">#=&gt; false</span>
+   <span class="hljs-keyword">nil</span>.<span class="hljs-keyword">nil</span>?          <span class="hljs-comment">#=&gt; true</span>
+</code></pre>
+<p>show-method&#x3067;&#x30E1;&#x30BD;&#x30C3;&#x30C9;&#x304C;&#x8868;&#x793A;&#x3055;&#x308C;&#x307E;&#x3059;&#x3002;</p>
+<pre><code class="lang-ruby">[<span class="hljs-number">2</span>] pry(main)&gt; show-method <span class="hljs-constant">String</span>.<span class="hljs-keyword">nil</span>?
+
+<span class="hljs-constant">From</span><span class="hljs-symbol">:</span> object.c (<span class="hljs-constant">C</span> <span class="hljs-constant">Method</span>)<span class="hljs-symbol">:</span>
+<span class="hljs-constant">Owner</span><span class="hljs-symbol">:</span> <span class="hljs-constant">Kernel</span>
+<span class="hljs-constant">Visibility</span><span class="hljs-symbol">:</span> public
+<span class="hljs-constant">Number</span> of <span class="hljs-symbol">lines:</span> <span class="hljs-number">5</span>
+
+static <span class="hljs-constant">VALUE</span>
+rb_false(<span class="hljs-constant">VALUE</span> obj)
+{
+    <span class="hljs-keyword">return</span> <span class="hljs-constant">Qfalse</span>;
+}
+</code></pre>
+<p>pry&#x3067;&#x30C7;&#x30D0;&#x30C3;&#x30B0;&#x3057;&#x3066;&#x3044;&#x304D;&#x307E;&#x3059;&#x3002;gem&#x3092;&#x8FFD;&#x52A0;&#x3057;&#x305F;&#x306E;&#x3067;rails&#x3092;&#x518D;&#x8D77;&#x52D5;&#x3057;&#x307E;&#x3059;&#x3002;</p>
+<p>app/controllers/bookmarks_controller.rb &#x306B; <code>binding.pry</code> &#x3092;&#x8FFD;&#x52A0;&#x3057;&#x307E;&#x3059;&#x3002;</p>
+<pre><code class="lang-ruby"><span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">index</span></span>
+  <span class="hljs-variable">@bookmarks</span> = <span class="hljs-constant">Bookmark</span>.all
+  binding.pry
+<span class="hljs-keyword">end</span>
+</code></pre>
+<p><a href="http://localhost:3000/bookmarks" target="_blank">http://localhost:3000/bookmarks</a> &#x3092;&#x8868;&#x793A;&#x3057;&#x307E;&#x3059;&#x3002;rails&#x3092;&#x8D77;&#x52D5;&#x3057;&#x305F;&#x30BF;&#x30FC;&#x30DF;&#x30CA;&#x30EB;&#x3067;&#x30C7;&#x30D0;&#x30C3;&#x30B0;&#x304C;&#x3067;&#x304D;&#x307E;&#x3059;&#x3002;</p>
+<pre><code class="lang-ruby">% rails s
+=&gt; Booting WEBrick
+=&gt; Rails 4.2.4 application starting in development on http://localhost:3000
+=&gt; Run `rails server -h` for more startup options
+=&gt; Ctrl-C to shutdown server
+[2015-12-04 07:43:32] INFO  WEBrick 1.3.1
+[2015-12-04 07:43:32] INFO  ruby 2.2.3 (2015-08-18) [x86_64-darwin14]
+[2015-12-04 07:43:32] INFO  WEBrick::HTTPServer#start: pid=35325 port=3000
+
+
+Started GET &quot;/bookmarks&quot; for ::1 at 2015-12-04 07:43:42 +0900
+  ActiveRecord::SchemaMigration Load (0.5ms)  SELECT &quot;schema_migrations&quot;.* FROM &quot;schema_migrations&quot;
+Processing by BookmarksController#index as HTML
+
+From: /Users/sada/git/gs/first-app/app/controllers/bookmarks_controller.rb @ line 8 BookmarksController#index:
+
+6: def index
+7:   @bookmarks = Bookmark.all
+8:   binding.pry
+=&gt; 9: end
+</code></pre>
+<p>&#x30A4;&#x30F3;&#x30B9;&#x30BF;&#x30F3;&#x30B9;&#x5909;&#x6570;&#x306A;&#x3069;&#x3092;&#x8868;&#x793A;&#x3067;&#x304D;&#x307E;&#x3059;&#x3002;</p>
+<pre><code class="lang-ruby">[<span class="hljs-number">1</span>] pry(<span class="hljs-value">#&lt;BookmarksController&gt;</span>)&gt; <span class="hljs-variable">@bookmarks</span>
+  <span class="hljs-constant">Bookmark</span> <span class="hljs-constant">Load</span> (<span class="hljs-number">1.2</span>ms)  <span class="hljs-constant">SELECT</span> <span class="hljs-string">&quot;bookmarks&quot;</span>.* <span class="hljs-constant">FROM</span> <span class="hljs-string">&quot;bookmarks&quot;</span>
+[
+    [<span class="hljs-number">0</span>] <span class="hljs-comment">#&lt;Bookmark:0x007feb883cbfb0&gt; {</span>
+                 <span class="hljs-symbol">:id</span> =&gt; <span class="hljs-number">1</span>,
+              <span class="hljs-symbol">:title</span> =&gt; <span class="hljs-string">&quot;sadah&quot;</span>,
+        <span class="hljs-symbol">:description</span> =&gt; <span class="hljs-string">&quot;My portfolio site.&quot;</span>,
+                <span class="hljs-symbol">:url</span> =&gt; <span class="hljs-string">&quot;https://sadah.github.io&quot;</span>,
+         <span class="hljs-symbol">:created_at</span> =&gt; <span class="hljs-constant">Wed</span>, <span class="hljs-number">02</span> <span class="hljs-constant">Dec</span> <span class="hljs-number">2015</span> <span class="hljs-number">00</span><span class="hljs-symbol">:</span><span class="hljs-number">26</span><span class="hljs-symbol">:</span><span class="hljs-number">31</span> <span class="hljs-constant">UTC</span> +<span class="hljs-number">00</span><span class="hljs-symbol">:</span><span class="hljs-number">00</span>,
+         <span class="hljs-symbol">:updated_at</span> =&gt; <span class="hljs-constant">Wed</span>, <span class="hljs-number">02</span> <span class="hljs-constant">Dec</span> <span class="hljs-number">2015</span> <span class="hljs-number">00</span><span class="hljs-symbol">:</span><span class="hljs-number">26</span><span class="hljs-symbol">:</span><span class="hljs-number">31</span> <span class="hljs-constant">UTC</span> +<span class="hljs-number">00</span><span class="hljs-symbol">:</span><span class="hljs-number">00</span>
+    },
+    [<span class="hljs-number">1</span>] <span class="hljs-comment">#&lt;Bookmark:0x007feb883cbc90&gt; {</span>
+                 <span class="hljs-symbol">:id</span> =&gt; <span class="hljs-number">2</span>,
+              <span class="hljs-symbol">:title</span> =&gt; <span class="hljs-string">&quot;test&quot;</span>,
+        <span class="hljs-symbol">:description</span> =&gt; <span class="hljs-string">&quot;test bookmark&quot;</span>,
+                <span class="hljs-symbol">:url</span> =&gt; <span class="hljs-string">&quot;http://exapmle.com&quot;</span>,
+         <span class="hljs-symbol">:created_at</span> =&gt; <span class="hljs-constant">Thu</span>, <span class="hljs-number">03</span> <span class="hljs-constant">Dec</span> <span class="hljs-number">2015</span> <span class="hljs-number">00</span><span class="hljs-symbol">:</span><span class="hljs-number">04</span><span class="hljs-symbol">:</span><span class="hljs-number">59</span> <span class="hljs-constant">UTC</span> +<span class="hljs-number">00</span><span class="hljs-symbol">:</span><span class="hljs-number">00</span>,
+         <span class="hljs-symbol">:updated_at</span> =&gt; <span class="hljs-constant">Thu</span>, <span class="hljs-number">03</span> <span class="hljs-constant">Dec</span> <span class="hljs-number">2015</span> <span class="hljs-number">00</span><span class="hljs-symbol">:</span><span class="hljs-number">04</span><span class="hljs-symbol">:</span><span class="hljs-number">59</span> <span class="hljs-constant">UTC</span> +<span class="hljs-number">00</span><span class="hljs-symbol">:</span><span class="hljs-number">00</span>
+    }
+]
+</code></pre>
+<p>help&#x3068;&#x5165;&#x529B;&#x3059;&#x308B;&#x3068;pry&#x306E;&#x4F7F;&#x3044;&#x65B9;&#x304C;&#x8868;&#x793A;&#x3055;&#x308C;&#x307E;&#x3059;&#x3002;</p>
+<p>&#x307E;&#x305F;&#x30A8;&#x30E9;&#x30FC;&#x304C;&#x767A;&#x751F;&#x3057;&#x305F;&#x5834;&#x5408;&#x3001;&#x30A8;&#x30E9;&#x30FC;&#x304C;&#x8868;&#x793A;&#x3055;&#x308C;&#x305F;&#x753B;&#x9762;&#x3067;&#x30C7;&#x30D0;&#x30C3;&#x30B0;&#x3092;&#x884C;&#x3046;&#x3053;&#x3068;&#x3082;&#x3067;&#x304D;&#x307E;&#x3059;&#x3002;</p>
 <h2 id="&#x8AB2;&#x984C;">&#x8AB2;&#x984C;</h2>
 <ol>
 <li>link_to&#x3092;&#x4F7F;&#x3063;&#x3066;URL&#x3092;&#x30EA;&#x30F3;&#x30AF;&#x306B;&#x3057;&#x3066;&#x307F;&#x307E;&#x3057;&#x3087;&#x3046;&#x3002;</li>
@@ -676,13 +845,9 @@ end
     <script src="../gitbook/plugins/gitbook-plugin-fontsettings/buttons.js"></script>
     
 
-    
-    <script src="../gitbook/plugins/gitbook-plugin-livereload/plugin.js"></script>
-    
-
 <script>
 require(["gitbook"], function(gitbook) {
-    var config = {"highlight":{},"search":{},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"livereload":{}};
+    var config = {"highlight":{},"search":{},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2}};
     gitbook.start(config);
 });
 </script>
