@@ -260,6 +260,21 @@ Rails.application.routes.draw do
 end
 ```
 
+```rake routes``` で定義されいているroutesを確認できます。
+
+```sh
+% rake routes
+       Prefix Verb   URI Pattern                   Controller#Action
+    bookmarks GET    /bookmarks(.:format)          bookmarks#index
+              POST   /bookmarks(.:format)          bookmarks#create
+ new_bookmark GET    /bookmarks/new(.:format)      bookmarks#new
+edit_bookmark GET    /bookmarks/:id/edit(.:format) bookmarks#edit
+     bookmark GET    /bookmarks/:id(.:format)      bookmarks#show
+              PATCH  /bookmarks/:id(.:format)      bookmarks#update
+              PUT    /bookmarks/:id(.:format)      bookmarks#update
+              DELETE /bookmarks/:id(.:format)      bookmarks#destroy
+```
+
 ### models
 
 app/models/bookmark.rb
@@ -439,6 +454,178 @@ json.array!(@bookmarks) do |bookmark|
   json.url bookmark_url(bookmark, format: :json)
 end
 ```
+
+## console
+
+```rails console``` で対話的に操作できます。
+
+```sh
+% rails console
+Loading development environment (Rails 4.2.4)
+irb(main):001:0>
+```
+
+```Bookmark.last``` で最後に登録したBookmarkを取得します。
+
+```ruby
+irb(main):001:0> Bookmark.last
+  Bookmark Load (0.2ms)  SELECT  "bookmarks".* FROM "bookmarks"  ORDER BY "bookmarks"."id" DESC LIMIT 1
+=> #<Bookmark id: 1, title: "sadah", description: "My portfolio site.", url: "https://sadah.github.io", created_at: "2015-12-02 00:26:31", updated_at: "2015-12-02 00:26:31">
+irb(main):002:0>
+```
+
+このようにデータを作成することもできます。
+
+```ruby
+irb(main):002:0> bookmark = Bookmark.create(title: "test", description: "test bookmark", url: "http://exapmle.com")
+   (4.0ms)  begin transaction
+  SQL (5.1ms)  INSERT INTO "bookmarks" ("title", "description", "url", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)  [["title", "test"], ["description", "test bookmark"], ["url", "http://exapmle.com"], ["created_at", "2015-12-03 00:04:59.802792"], ["updated_at", "2015-12-03 00:04:59.802792"]]
+   (1.0ms)  commit transaction
+=> #<Bookmark id: 2, title: "test", description: "test bookmark", url: "http://exapmle.com", created_at: "2015-12-03 00:04:59", updated_at: "2015-12-03 00:04:59">
+irb(main):003:0>
+```
+
+Active Recordのクエリについてはこちらがわかりやすいです。
+
+* <a href="http://railsguides.jp/active_record_querying.html" target="_blank">Active Record クエリインターフェイス | Rails ガイド</a>
+
+## debug
+
+pryはirb(標準のRubyコンソール)に代わる、パワフルなコンソールです。
+
+* <a href="https://github.com/pry/pry" target="_blank">pry/pry</a>
+
+Gemfileにpryのgemを追加します。
+
+```ruby
+group :development, :test do
+  # Call 'byebug' anywhere in the code to stop execution and get a debugger console
+  gem 'byebug'
+  gem 'pry'
+  gem 'pry-doc'
+  gem 'pry-byebug'
+  gem 'pry-rails'
+  gem 'awesome_print'
+end
+```
+
+それぞれのgemはこのような機能を持ちます。
+
+|gem||
+|--|--|
+|pry|pry本体|
+|pry-doc|ドキュメントやメソッドを表示する|
+|pry-byebug|デバッグをできるようにする|
+|pry-rails|Railsのコンソールをpryにする|
+|awesome_print|データ構造などをわかりやすく表示する|
+
+
+Railsコンソールを立ち上げると、pryが起動していることがわかります。
+
+```ruby
+% rails c
+Loading development environment (Rails 4.2.4)
+[1] pry(main)>
+```
+
+show-docでドキュメントが表示されます。
+
+```ruby
+[1] pry(main)> show-doc String.nil?
+
+From: object.c (C Method):
+Owner: Kernel
+Visibility: public
+Signature: nil?()
+Number of lines: 4
+
+Only the object nil responds true to nil?.
+
+   Object.new.nil?   #=> false
+   nil.nil?          #=> true
+```
+
+show-methodでメソッドが表示されます。
+
+```ruby
+[2] pry(main)> show-method String.nil?
+
+From: object.c (C Method):
+Owner: Kernel
+Visibility: public
+Number of lines: 5
+
+static VALUE
+rb_false(VALUE obj)
+{
+    return Qfalse;
+}
+```
+
+pryでデバッグしていきます。gemを追加したのでrailsを再起動します。
+
+app/controllers/bookmarks_controller.rb に ```binding.pry``` を追加します。
+
+```ruby
+def index
+  @bookmarks = Bookmark.all
+  binding.pry
+end
+```
+
+http://localhost:3000/bookmarks を表示します。railsを起動したターミナルでデバッグができます。
+
+```ruby
+% rails s
+=> Booting WEBrick
+=> Rails 4.2.4 application starting in development on http://localhost:3000
+=> Run `rails server -h` for more startup options
+=> Ctrl-C to shutdown server
+[2015-12-04 07:43:32] INFO  WEBrick 1.3.1
+[2015-12-04 07:43:32] INFO  ruby 2.2.3 (2015-08-18) [x86_64-darwin14]
+[2015-12-04 07:43:32] INFO  WEBrick::HTTPServer#start: pid=35325 port=3000
+
+
+Started GET "/bookmarks" for ::1 at 2015-12-04 07:43:42 +0900
+  ActiveRecord::SchemaMigration Load (0.5ms)  SELECT "schema_migrations".* FROM "schema_migrations"
+Processing by BookmarksController#index as HTML
+
+From: /Users/sada/git/gs/first-app/app/controllers/bookmarks_controller.rb @ line 8 BookmarksController#index:
+
+6: def index
+7:   @bookmarks = Bookmark.all
+8:   binding.pry
+=> 9: end
+```
+
+インスタンス変数などを表示できます。
+
+```ruby
+[1] pry(#<BookmarksController>)> @bookmarks
+  Bookmark Load (1.2ms)  SELECT "bookmarks".* FROM "bookmarks"
+[
+    [0] #<Bookmark:0x007feb883cbfb0> {
+                 :id => 1,
+              :title => "sadah",
+        :description => "My portfolio site.",
+                :url => "https://sadah.github.io",
+         :created_at => Wed, 02 Dec 2015 00:26:31 UTC +00:00,
+         :updated_at => Wed, 02 Dec 2015 00:26:31 UTC +00:00
+    },
+    [1] #<Bookmark:0x007feb883cbc90> {
+                 :id => 2,
+              :title => "test",
+        :description => "test bookmark",
+                :url => "http://exapmle.com",
+         :created_at => Thu, 03 Dec 2015 00:04:59 UTC +00:00,
+         :updated_at => Thu, 03 Dec 2015 00:04:59 UTC +00:00
+    }
+]
+```
+
+helpと入力するとpryの使い方が表示されます。
+
+またエラーが発生した場合、エラーが表示された画面でデバッグを行うこともできます。
 
 ## 課題
 
