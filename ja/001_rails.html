@@ -46,7 +46,7 @@
     <body>
         
         
-    <div class="book" data-level="2.2" data-chapter-title="Ruby on Rails基礎" data-filepath="ja/001_rails.md" data-basepath=".." data-revision="Sat Dec 05 2015 11:51:41 GMT+0900 (JST)">
+    <div class="book" data-level="2.2" data-chapter-title="Ruby on Rails基礎" data-filepath="ja/001_rails.md" data-basepath=".." data-revision="Mon Dec 07 2015 07:53:18 GMT+0900 (JST)">
     
 
 <div class="book-summary">
@@ -336,13 +336,14 @@
 <pre><code class="lang-sh"><span class="hljs-built_in">cd</span> first-app
 rails server
 </code></pre>
+<p>&#x3053;&#x3053;&#x304B;&#x3089;&#x3055;&#x304D;&#x3067;&#x306F;&#x3001;first-app&#x306E;&#x30C7;&#x30A3;&#x30EC;&#x30AF;&#x30C8;&#x30EA;&#x3092;RAILS_ROOT&#x3068;&#x547C;&#x3073;&#x307E;&#x3059;&#x3002;</p>
 <h2 id="scaffold&#x306B;&#x3088;&#x308B;&#x30B3;&#x30FC;&#x30C9;&#x306E;&#x81EA;&#x52D5;&#x751F;&#x6210;">scaffold&#x306B;&#x3088;&#x308B;&#x30B3;&#x30FC;&#x30C9;&#x306E;&#x81EA;&#x52D5;&#x751F;&#x6210;</h2>
 <p>Rails&#x3067;&#x306F;&#x3055;&#x307E;&#x3056;&#x307E;&#x306A;&#x30B3;&#x30FC;&#x30C9;&#x3092;&#x81EA;&#x52D5;&#x751F;&#x6210;&#x3067;&#x304D;&#x307E;&#x3059;&#x3002;scaffold&#x3067;&#x30A2;&#x30D7;&#x30EA;&#x30B1;&#x30FC;&#x30B7;&#x30E7;&#x30F3;&#x306E;&#x96DB;&#x5F62;&#x3092;&#x4F5C;&#x308A;&#x307E;&#x3059;&#x3002;
 scaffold&#x306F;&#x4E00;&#x89A7;&#x3001;&#x8A73;&#x7D30;&#x3001;&#x8FFD;&#x52A0;&#x3001;&#x524A;&#x9664;&#x3001;&#x5909;&#x66F4;&#x306E;&#x30B3;&#x30FC;&#x30C9;&#x3092;&#x81EA;&#x52D5;&#x751F;&#x6210;&#x3057;&#x307E;&#x3059;&#x3002;</p>
-<p>&#x3053;&#x3053;&#x3067;&#x306F; <strong>bookmark</strong> &#x3092;&#x7BA1;&#x7406;&#x3059;&#x308B;&#x6A5F;&#x80FD;&#x3092;&#x4F5C;&#x308A;&#x307E;&#x3059;&#x3002;</p>
+<p>&#x3053;&#x3053;&#x3067;&#x306F; <strong>bookmark</strong> &#x3092;&#x7BA1;&#x7406;&#x3059;&#x308B;&#x6A5F;&#x80FD;&#x3092;&#x4F5C;&#x308A;&#x307E;&#x3059;&#x3002;RAILS&#xFF3F;ROOT&#x3067;&#x4EE5;&#x4E0B;&#x306E;&#x30B3;&#x30E1;&#x30F3;&#x30C9;&#x3092;&#x5B9F;&#x884C;&#x3057;&#x307E;&#x3059;&#x3002;</p>
 <pre><code class="lang-sh">rails generate scaffold bookmark title:string description:text url:string
 </code></pre>
-<p>DB&#x3092;&#x66F4;&#x65B0;&#x3057;&#x3066;&#x3001;&#x30A2;&#x30D7;&#x30EA;&#x30B1;&#x30FC;&#x30B7;&#x30E7;&#x30F3;&#x3092;&#x8D77;&#x52D5;&#x3057;&#x307E;&#x3059;&#x3002;</p>
+<p>DB&#x3092;&#x66F4;&#x65B0;&#x3057;&#x3066;&#x3001;&#x30A2;&#x30D7;&#x30EA;&#x30B1;&#x30FC;&#x30B7;&#x30E7;&#x30F3;&#x3092;&#x8D77;&#x52D5;&#x3057;&#x307E;&#x3059;&#x3002;RAILS&#xFF3F;ROOT&#x3067;&#x4EE5;&#x4E0B;&#x306E;&#x30B3;&#x30E1;&#x30F3;&#x30C9;&#x3092;&#x5B9F;&#x884C;&#x3057;&#x307E;&#x3059;&#x3002;</p>
 <pre><code class="lang-sh">bin/rake db:migrate
 rails server
 </code></pre>
@@ -649,7 +650,7 @@ end
 <span class="hljs-keyword">end</span>
 </code></pre>
 <h2 id="console">console</h2>
-<p><code>rails console</code> &#x3067;&#x5BFE;&#x8A71;&#x7684;&#x306B;&#x64CD;&#x4F5C;&#x3067;&#x304D;&#x307E;&#x3059;&#x3002;</p>
+<p><code>rails console</code> &#x3067;&#x5BFE;&#x8A71;&#x7684;&#x306B;&#x64CD;&#x4F5C;&#x3067;&#x304D;&#x307E;&#x3059;&#x3002;RAILS&#xFF3F;ROOT&#x3067;&#x4EE5;&#x4E0B;&#x306E;&#x30B3;&#x30E1;&#x30F3;&#x30C9;&#x3092;&#x5B9F;&#x884C;&#x3057;&#x307E;&#x3059;&#x3002;</p>
 <pre><code class="lang-sh">% rails console
 Loading development environment (Rails <span class="hljs-number">4.2</span>.<span class="hljs-number">4</span>)
 irb(main):<span class="hljs-number">001</span>:<span class="hljs-number">0</span>&gt;
@@ -719,7 +720,7 @@ irb(main):<span class="hljs-number">001</span>:<span class="hljs-number">0</span
 </tr>
 </tbody>
 </table>
-<p>Rails&#x30B3;&#x30F3;&#x30BD;&#x30FC;&#x30EB;&#x3092;&#x7ACB;&#x3061;&#x4E0A;&#x3052;&#x308B;&#x3068;&#x3001;pry&#x304C;&#x8D77;&#x52D5;&#x3057;&#x3066;&#x3044;&#x308B;&#x3053;&#x3068;&#x304C;&#x308F;&#x304B;&#x308A;&#x307E;&#x3059;&#x3002;</p>
+<p>Rails&#x30B3;&#x30F3;&#x30BD;&#x30FC;&#x30EB;&#x3092;&#x7ACB;&#x3061;&#x4E0A;&#x3052;&#x308B;&#x3068;&#x3001;pry&#x304C;&#x8D77;&#x52D5;&#x3057;&#x3066;&#x3044;&#x308B;&#x3053;&#x3068;&#x304C;&#x308F;&#x304B;&#x308A;&#x307E;&#x3059;&#x3002;RAILS&#xFF3F;ROOT&#x3067;&#x4EE5;&#x4E0B;&#x306E;&#x30B3;&#x30E1;&#x30F3;&#x30C9;&#x3092;&#x5B9F;&#x884C;&#x3057;&#x307E;&#x3059;&#x3002;</p>
 <pre><code class="lang-ruby">% rails c
 <span class="hljs-constant">Loading</span> development environment (<span class="hljs-constant">Rails</span> <span class="hljs-number">4.2</span>.<span class="hljs-number">4</span>)
 [<span class="hljs-number">1</span>] pry(main)&gt;
@@ -804,12 +805,34 @@ From: /Users/sada/git/gs/first-app/app/controllers/bookmarks_controller.rb @ lin
 ]
 </code></pre>
 <p>help&#x3068;&#x5165;&#x529B;&#x3059;&#x308B;&#x3068;pry&#x306E;&#x4F7F;&#x3044;&#x65B9;&#x304C;&#x8868;&#x793A;&#x3055;&#x308C;&#x307E;&#x3059;&#x3002;</p>
-<p>&#x307E;&#x305F;&#x30A8;&#x30E9;&#x30FC;&#x304C;&#x767A;&#x751F;&#x3057;&#x305F;&#x5834;&#x5408;&#x3001;&#x30A8;&#x30E9;&#x30FC;&#x304C;&#x8868;&#x793A;&#x3055;&#x308C;&#x305F;&#x753B;&#x9762;&#x3067;&#x30C7;&#x30D0;&#x30C3;&#x30B0;&#x3092;&#x884C;&#x3046;&#x3053;&#x3068;&#x3082;&#x3067;&#x304D;&#x307E;&#x3059;&#x3002;</p>
+<p>~/.pryrc &#x306B;&#x3053;&#x3093;&#x306A;&#x611F;&#x3058;&#x306E;&#x8A2D;&#x5B9A;&#x3092;&#x66F8;&#x3044;&#x3066;&#x304A;&#x304F;&#x3068;&#x4FBF;&#x5229;&#x3067;&#x3059;&#x3002;</p>
+<pre><code># http://qiita.com/Linda_pp/items/d75d7c3953faa34a1f0e
+begin
+  require &quot;awesome_print&quot;
+  AwesomePrint.pry!
+rescue LoadError =&gt; err
+  puts &quot;no awesome_print :(&quot;
+end
+
+# http://morizyun.github.io/blog/pry-tips-rails-ruby/
+# pry-debugger&#x306E;&#x30B7;&#x30E7;&#x30FC;&#x30C8;&#x30AB;&#x30C3;&#x30C8;
+Pry.commands.alias_command &apos;c&apos;, &apos;continue&apos;
+Pry.commands.alias_command &apos;s&apos;, &apos;step&apos;
+Pry.commands.alias_command &apos;n&apos;, &apos;next&apos;
+</code></pre><p>&#x307E;&#x305F;&#x30A8;&#x30E9;&#x30FC;&#x304C;&#x767A;&#x751F;&#x3057;&#x305F;&#x5834;&#x5408;&#x3001;&#x30A8;&#x30E9;&#x30FC;&#x304C;&#x8868;&#x793A;&#x3055;&#x308C;&#x305F;&#x753B;&#x9762;&#x3067;&#x30C7;&#x30D0;&#x30C3;&#x30B0;&#x3092;&#x884C;&#x3046;&#x3053;&#x3068;&#x3082;&#x3067;&#x304D;&#x307E;&#x3059;&#x3002;</p>
 <h2 id="&#x8AB2;&#x984C;">&#x8AB2;&#x984C;</h2>
-<ol>
+<p>&#x4ECA;&#x9031;&#x306E;&#x8AB2;&#x984C;&#x3067;&#x3059;&#x3002;</p>
+<ul>
 <li>link_to&#x3092;&#x4F7F;&#x3063;&#x3066;URL&#x3092;&#x30EA;&#x30F3;&#x30AF;&#x306B;&#x3057;&#x3066;&#x307F;&#x307E;&#x3057;&#x3087;&#x3046;&#x3002;</li>
 <li>&#x30BF;&#x30A4;&#x30C8;&#x30EB;&#x3068;URL&#x3092;&#x5FC5;&#x9808;&#x9805;&#x76EE;&#x306B;&#x3057;&#x307E;&#x3057;&#x3087;&#x3046;&#x3002;</li>
-</ol>
+</ul>
+<p>&#x3055;&#x3089;&#x306B;&#x9811;&#x5F35;&#x308A;&#x305F;&#x3044;&#x65B9;&#x306F;bookmark&#x306B;&#x30B3;&#x30E1;&#x30F3;&#x30C8;&#x3067;&#x304D;&#x308B;&#x3088;&#x3046;&#x306B;&#x3057;&#x307E;&#x3057;&#x3087;&#x3046;&#x3002; &#x3056;&#x3063;&#x304F;&#x308A;&#x3068;&#x3057;&#x305F;&#x6D41;&#x308C;&#x306F;&#x3053;&#x3093;&#x306A;&#x611F;&#x3058;&#x3067;&#x3059;&#x3002;</p>
+<ul>
+<li>comment(user_name, content, bookmark_id)&#x3092;scaffold&#x3067;&#x4F5C;&#x6210;&#x3059;&#x308B;</li>
+<li>has_many, belongs_to&#x3067;&#x95A2;&#x9023;&#x3092;&#x3064;&#x3051;&#x308B;</li>
+<li>bookmark#show&#x3067;&#x30B3;&#x30E1;&#x30F3;&#x30C8;&#x3092;&#x8868;&#x793A;&#x3059;&#x308B;</li>
+<li>bookmark#show&#x3067;&#x30B3;&#x30E1;&#x30F3;&#x30C8;&#x3092;&#x65B0;&#x898F;&#x767B;&#x9332;&#x3067;&#x304D;&#x308B;&#x3088;&#x3046;&#x3059;&#x308B;</li>
+</ul>
 
                     
                     </section>
