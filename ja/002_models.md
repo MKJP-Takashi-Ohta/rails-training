@@ -15,6 +15,7 @@ image、captionというカラムをもたせます。imageには画像ファイ
 
 ```sh
 rails g scaffold photo image:string caption:text
+rake db:migrate
 ```
 
 サーバーを起動して、正しく動作するか確認してみましょう。ターミナルで以下のコマンドを実行します。
@@ -94,8 +95,50 @@ class Photo < ActiveRecord::Base
 <%= image_tag(@photo.image_url) if @photo.image.present? %>
 ```
 
+## Bootstrapの導入
+
+エディタで app/views/layouts/application.html.erb を編集します。この行の後に
+
+```
+<title>Photolog</title>
+```
+
+この2行を追加します。
+
+```
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap-theme.min.css">
+```
+
+この行の前後を
+
+```
+<%= yield %>
+```
+
+このように変更します。
+
+```
+<div class="container">
+  <%= yield %>
+</div>
+```
+
+この行の前に
+
+```
+</body>
+```
+
+この行を追加します
+
+```
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+```
+
 ### 課題
 
+画像のサイズを指定しましょう
 他の画面でも画像を表示出来るようにしてみましょう。
 Bootstrapを組み込んでみましょう。
 resize_to_fit
