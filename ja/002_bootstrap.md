@@ -77,3 +77,16 @@ Bootstrapを導入して、デザインを適用していきます。
 * ```app/views/photos/index.html.erb``` でも画像ファイルを表示しましょう
 * ```app/views/photos/index.html.erb``` でも表示を整えてみましょう。
 * 画像のサイズを指定しましょう
+
+さらに頑張りたい人は
+
+* Media Queriesを使って、レスポンシブウェブデザインを適用しましょう
+* 画面が一定サイズより小さい場合は、画像が横幅いっぱいに表示されるようにしましょう
+
+画面が大きい場合はこのように表示され
+
+<img src="../images/photo-l.jpg" alt="画面が大きい場合" style="border: 1px solid #eee">
+
+画面が小さい場合はこのように表示されるようにしてみましょう。
+
+<img src="../images/photo-s.jpg" alt="画面が小さい場合" style="border: 1px solid #eee">
