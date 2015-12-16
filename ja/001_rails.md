@@ -99,18 +99,20 @@ cd first-app
 rails server
 ```
 
+ここからさきでは、first-appのディレクトリをRAILS_ROOTと呼びます。
+
 ## scaffoldによるコードの自動生成
 
 Railsではさまざまなコードを自動生成できます。scaffoldでアプリケーションの雛形を作ります。
 scaffoldは一覧、詳細、追加、削除、変更のコードを自動生成します。
 
-ここでは **bookmark** を管理する機能を作ります。
+ここでは **bookmark** を管理する機能を作ります。RAILS＿ROOTで以下のコメンドを実行します。
 
 ```sh
 rails generate scaffold bookmark title:string description:text url:string
 ```
 
-DBを更新して、アプリケーションを起動します。
+DBを更新して、アプリケーションを起動します。RAILS＿ROOTで以下のコメンドを実行します。
 
 ```sh
 bin/rake db:migrate
@@ -457,7 +459,7 @@ end
 
 ## console
 
-```rails console``` で対話的に操作できます。
+```rails console``` で対話的に操作できます。RAILS＿ROOTで以下のコメンドを実行します。
 
 ```sh
 % rails console
@@ -520,7 +522,7 @@ end
 |awesome_print|データ構造などをわかりやすく表示する|
 
 
-Railsコンソールを立ち上げると、pryが起動していることがわかります。
+Railsコンソールを立ち上げると、pryが起動していることがわかります。RAILS＿ROOTで以下のコメンドを実行します。
 
 ```ruby
 % rails c
@@ -625,9 +627,36 @@ From: /Users/sada/git/gs/first-app/app/controllers/bookmarks_controller.rb @ lin
 
 helpと入力するとpryの使い方が表示されます。
 
+~/.pryrc にこんな感じの設定を書いておくと便利です。
+
+```
+# http://qiita.com/Linda_pp/items/d75d7c3953faa34a1f0e
+begin
+  require "awesome_print"
+  AwesomePrint.pry!
+rescue LoadError => err
+  puts "no awesome_print :("
+end
+
+# http://morizyun.github.io/blog/pry-tips-rails-ruby/
+# pry-debuggerのショートカット
+Pry.commands.alias_command 'c', 'continue'
+Pry.commands.alias_command 's', 'step'
+Pry.commands.alias_command 'n', 'next'
+```
+
 またエラーが発生した場合、エラーが表示された画面でデバッグを行うこともできます。
 
 ## 課題
 
-1. link_toを使ってURLをリンクにしてみましょう。
-2. タイトルとURLを必須項目にしましょう。
+今週の課題です。
+
+* link_toを使ってURLをリンクにしてみましょう。
+* タイトルとURLを必須項目にしましょう。
+
+さらに頑張りたい方はbookmarkにコメントできるようにしましょう。 ざっくりとした流れはこんな感じです。
+
+* comment(user_name, content, bookmark_id)をscaffoldで作成する
+* has_many, belongs_toで関連をつける
+* bookmark#showでコメントを表示する
+* bookmark#showでコメントを新規登録できるようする

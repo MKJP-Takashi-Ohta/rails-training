@@ -1,5 +1,5 @@
 {
-  "name": "rails-study",
+  "name": "rails-training",
   "private": true,
   "license": "MIT",
   "version": "1.0.0",
@@ -21,7 +21,7 @@
   ],
   "devDependencies": {
     "babel": "^5.8.23",
-    "gitbook-cli": "^1.0.0",
+    "gitbook-cli": "^1.0.1",
     "gitbook-plugin-include-codeblock": "^1.4.0",
     "gitbook-plugin-japanese-support": "0.0.1",
     "gulp": "^3.9.0",
