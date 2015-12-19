@@ -29,7 +29,7 @@ gem 'devise'
 gem 'omniauth-twitter'
 ```
 
-gemをインストールします。
+gemをインストールします。RAILS_ROOTでbundle installを実行します。
 
 ```
 bundle install
@@ -126,7 +126,6 @@ app/views/layouts/application.html.erbをエディタで開きます。この行
 この行を追加します。
 
 ```html
-<div class="container">
   <p class="notice"><%= notice %></p>
   <p class="alert"><%= alert %></p>
 ```
@@ -310,16 +309,18 @@ test:
   <<: *default_twitter
 ```
 
-本番環境では環境変数からtwitter認証の情報を取得するようにします。
+本番環境では環境変数からtwitter認証の情報を取得するようにします。この行のあとに
 
 ```ruby
 production:
   secret_key_base: <%= ENV["SECRET_KEY_BASE"] %>
 ```
 
+この行を追加します。
+
 ```ruby
-twitter_api_key: <%= ENV["TWITTER_API_KEY"] %>
-twitter_api_secret: <%= ENV["TWITTER_API_SECRET"] %>
+  twitter_api_key: <%= ENV["TWITTER_API_KEY"] %>
+  twitter_api_secret: <%= ENV["TWITTER_API_SECRET"] %>
 ```
 
 config/initializers/devise.rbで、Twitter認証で利用するKeyを設定します。
@@ -327,9 +328,9 @@ config/initializers/devise.rbで、Twitter認証で利用するKeyを設定し�
 最後のendの前に2行追加します。
 
 ```ruby
-config.omniauth :twitter,
-  Rails.application.secrets.twitter_api_key,
-  Rails.application.secrets.twitter_api_secret
+  config.omniauth :twitter,
+    Rails.application.secrets.twitter_api_key,
+    Rails.application.secrets.twitter_api_secret
 ```
 
 app/models/user.rb に OmniAuth を利用する設定を追加します。この行の最後に
@@ -419,6 +420,7 @@ class Users::OmniauthCallbacksController < Devise::OmniauthCallbacksController
       redirect_to new_user_registration_url
     end
   end
+
 end
 ```
 
@@ -505,13 +507,13 @@ end
 
 Deviseが利用するURLを定義します。
 
-config/routes.rbをエディターで開ます。この行のあとに
+config/routes.rbをエディターで開ます。この行を
 
 ```ruby
-Rails.application.routes.draw do
+devise_for :users
 ```
 
-この行を追加します。
+このように書き換えます。
 
 ```ruby
 devise_for :users, controllers: { omniauth_callbacks: 'users/omniauth_callbacks' }

@@ -8,6 +8,6 @@
   * [デザインの適用(Bootstrapの導入)](ja/002_bootstrap.md)
 * [アプリケーション開発 2](ja/003.md)
   * [Twitter Developer登録](ja/003_twitter.md)
-  * [ログイン機能(Devise)](ja/003_devise.md)
+  * [認証機能(Devise)](ja/003_devise.md)
 * アプリケーション開発 3
   * コメント機能
