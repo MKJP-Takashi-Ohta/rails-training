@@ -458,6 +458,8 @@ if @user.persisted?
 
 Userモデルでユーザー情報の検索と保存をできるようにします。
 
+app/models/user.rbをエディタで開きます。以下のように書き換えます。
+
 ```ruby
 class User < ActiveRecord::Base
   # Include default devise modules. Others available are:
