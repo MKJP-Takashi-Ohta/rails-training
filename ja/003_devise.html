@@ -46,7 +46,7 @@
     <body>
         
         
-    <div class="book" data-level="4.2" data-chapter-title="ログイン機能(Devise)" data-filepath="ja/003_devise.md" data-basepath=".." data-revision="Sat Dec 19 2015 11:32:35 GMT+0900 (JST)">
+    <div class="book" data-level="4.2" data-chapter-title="ログイン機能(Devise)" data-filepath="ja/003_devise.md" data-basepath=".." data-revision="Sat Dec 19 2015 12:43:31 GMT+0900 (JST)">
     
 
 <div class="book-summary">
@@ -371,7 +371,7 @@ Some setup you must do manually if you haven&apos;t yet:
        rails g devise:views
 
 ===============================================================================
-</code></pre><p>&#x30E1;&#x30C3;&#x30BB;&#x30FC;&#x30B8;&#x306B;&#x3057;&#x305F;&#x304C;&#x3063;&#x3066;&#x3001;&#x5BFE;&#x5FDC;&#x3057;&#x3066;&#x3044;&#x304D;&#x307E;&#x3059;&#x3002;</p>
+</code></pre><p>&#x30E1;&#x30C3;&#x30BB;&#x30FC;&#x30B8;&#x306B;&#x3057;&#x305F;&#x304C;&#x3063;&#x3066;&#x3001;&#x5FC5;&#x8981;&#x306A;&#x90E8;&#x5206;&#x306E;&#x5BFE;&#x5FDC;&#x3092;&#x884C;&#x3044;&#x307E;&#x3059;&#x3002;</p>
 <p>&#x4ECA;&#x56DE;&#x306F;&#x5229;&#x7528;&#x3057;&#x307E;&#x305B;&#x3093;&#x304C;&#x3001;Devise&#x306E;&#x6A5F;&#x80FD;&#x3092;&#x4F7F;&#x3046;&#x3068;&#x30E6;&#x30FC;&#x30B6;&#x4F5C;&#x6210;&#x3084;&#x8A8D;&#x8A3C;&#x6642;&#x306B;&#x30E1;&#x30FC;&#x30EB;&#x3092;&#x9001;&#x4FE1;&#x3067;&#x304D;&#x307E;&#x3059;&#x3002;&#x3053;&#x306E;&#x6A5F;&#x80FD;&#x3092;&#x5229;&#x7528;&#x3059;&#x308B;&#x305F;&#x3081;&#x306E;&#x8A2D;&#x5B9A;&#x3092;&#x8FFD;&#x52A0;&#x3057;&#x307E;&#x3059;&#x3002;</p>
 <p>config/environments/development.rb&#x3092;&#x30A8;&#x30C7;&#x30A3;&#x30BF;&#x3067;&#x958B;&#x304D;&#x307E;&#x3059;&#x3002;&#x3053;&#x306E;&#x884C;&#x306E;&#x5F8C;&#x306B;</p>
 <pre><code class="lang-ruby"><span class="hljs-comment"># Don&apos;t care if the mailer can&apos;t send.</span>
@@ -397,10 +397,10 @@ config.action_mailer.raise_delivery_errors = <span class="hljs-keyword">false</s
   <span class="hljs-tag">&lt;<span class="hljs-title">p</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;alert&quot;</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-title">%=</span> <span class="hljs-attribute">alert</span> %&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-title">p</span>&gt;</span>
 </code></pre>
 <p>&#x30E1;&#x30C3;&#x30BB;&#x30FC;&#x30B8;&#x304C;&#x91CD;&#x8907;&#x3057;&#x3066;&#x8868;&#x793A;&#x3055;&#x308C;&#x3066;&#x3057;&#x307E;&#x3046;&#x305F;&#x3081;&#x3001;&#x4E0D;&#x8981;&#x306B;&#x306A;&#x3063;&#x305F;&#x30B3;&#x30FC;&#x30C9;&#x3092;&#x524A;&#x9664;&#x3057;&#x307E;&#x3059;&#x3002;</p>
-<p>app/views/photos/index.html.erb&#x3092;&#x30A8;&#x30C7;&#x30A3;&#x30BF;&#x3067;&#x958B;&#x304D;&#x307E;&#x3059;&#x3002;&#x3053;&#x306E;&#x884C;&#x3092;&#x524A;&#x9664;&#x3057;&#x307E;&#x3059;&#x3002;</p>
+<p>app/views/photos/index.html.erb &#x3092;&#x30A8;&#x30C7;&#x30A3;&#x30BF;&#x3067;&#x958B;&#x304D;&#x307E;&#x3059;&#x3002;&#x3053;&#x306E;&#x884C;&#x3092;&#x524A;&#x9664;&#x3057;&#x307E;&#x3059;&#x3002;</p>
 <pre><code class="lang-html"><span class="hljs-tag">&lt;<span class="hljs-title">p</span> <span class="hljs-attribute">id</span>=<span class="hljs-value">&quot;notice&quot;</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-title">%=</span> <span class="hljs-attribute">notice</span> %&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-title">p</span>&gt;</span>
 </code></pre>
-<p>4&#x3001;&#xFF15;&#x306E;&#x5BFE;&#x5FDC;&#x306F;&#x3044;&#x307E;&#x306F;&#x5FC5;&#x8981;&#x306A;&#x3044;&#x306E;&#x3067;&#x306A;&#x306B;&#x3082;&#x3057;&#x307E;&#x305B;&#x3093;&#x3002;</p>
+<p>4&#x3068;&#xFF15;&#x306E;&#x5BFE;&#x5FDC;&#x306F;&#x3044;&#x307E;&#x306F;&#x5FC5;&#x8981;&#x306A;&#x3044;&#x306E;&#x3067;&#x306A;&#x306B;&#x3082;&#x3057;&#x307E;&#x305B;&#x3093;&#x3002;</p>
 <h2 id="user&#x30E2;&#x30C7;&#x30EB;&#x306E;&#x4F5C;&#x6210;">User&#x30E2;&#x30C7;&#x30EB;&#x306E;&#x4F5C;&#x6210;</h2>
 <p>&#x8A8D;&#x8A3C;&#x3067;&#x5229;&#x7528;&#x3059;&#x308B;User&#x30E2;&#x30C7;&#x30EB;&#x3092;&#x81EA;&#x52D5;&#x751F;&#x6210;&#x3057;&#x307E;&#x3059;&#x3002;</p>
 <pre><code class="lang-sh">rails g devise User
@@ -480,11 +480,11 @@ config.action_mailer.raise_delivery_errors = <span class="hljs-keyword">false</s
 <tbody>
 <tr>
 <td style="text-align:left">provider</td>
-<td style="text-align:left">&#x8A8D;&#x8A3C;&#x3067;&#x4F7F;&#x3046;&#x30B5;&#x30FC;&#x30D3;&#x30B9;</td>
+<td style="text-align:left">&#x8A8D;&#x8A3C;&#x3067;&#x4F7F;&#x3046;&#x30B5;&#x30FC;&#x30D3;&#x30B9;&#x3002;OmniAuthTwitter&#x3067;&#x5229;&#x7528;&#x3057;&#x307E;&#x3059;</td>
 </tr>
 <tr>
 <td style="text-align:left">uid</td>
-<td style="text-align:left">&#x30E6;&#x30FC;&#x30B6;&#x30FC;&#x306E;ID</td>
+<td style="text-align:left">&#x30E6;&#x30FC;&#x30B6;&#x30FC;&#x306E;ID&#x3002;OmniAuthTwitter&#x3067;&#x5229;&#x7528;&#x3057;&#x307E;&#x3059;</td>
 </tr>
 <tr>
 <td style="text-align:left">user_name</td>
@@ -564,7 +564,7 @@ config.action_mailer.raise_delivery_errors = <span class="hljs-keyword">false</s
   <span class="hljs-constant">Rails</span>.application.secrets.twitter_api_key,
   <span class="hljs-constant">Rails</span>.application.secrets.twitter_api_secret
 </code></pre>
-<p>app/models/user.rb &#x306B; Omniauth &#x3092;&#x5229;&#x7528;&#x3059;&#x308B;&#x8A2D;&#x5B9A;&#x3092;&#x8FFD;&#x52A0;&#x3057;&#x307E;&#x3059;&#x3002;&#x3053;&#x306E;&#x884C;&#x306E;&#x6700;&#x5F8C;&#x306B;</p>
+<p>app/models/user.rb &#x306B; OmniAuth &#x3092;&#x5229;&#x7528;&#x3059;&#x308B;&#x8A2D;&#x5B9A;&#x3092;&#x8FFD;&#x52A0;&#x3057;&#x307E;&#x3059;&#x3002;&#x3053;&#x306E;&#x884C;&#x306E;&#x6700;&#x5F8C;&#x306B;</p>
 <pre><code class="lang-ruby">devise <span class="hljs-symbol">:database_authenticatable</span>, <span class="hljs-symbol">:registerable</span>,
        <span class="hljs-symbol">:recoverable</span>, <span class="hljs-symbol">:rememberable</span>, <span class="hljs-symbol">:trackable</span>, <span class="hljs-symbol">:validatable</span>
 </code></pre>
@@ -602,8 +602,8 @@ config.action_mailer.raise_delivery_errors = <span class="hljs-keyword">false</s
       invoke    scss
       create      app/assets/stylesheets/users/omniauth_callbacks.scss
 </code></pre>
-<p>&#x30B3;&#x30F3;&#x30C8;&#x30ED;&#x30FC;&#x30E9;&#x30FC;&#x306E;&#x4E2D;&#x8EAB;&#x306F;&#x3053;&#x306E;&#x3088;&#x3046;&#x306B;&#x306A;&#x3063;&#x3066;&#x3044;&#x307E;&#x3059;&#x3002;</p>
-<p>app/controllers/users/omniauth_callbacks_controller.rb</p>
+<p>&#x30B3;&#x30F3;&#x30C8;&#x30ED;&#x30FC;&#x30E9;&#x30FC;&#x306B;&#x30B3;&#x30FC;&#x30EB;&#x30D0;&#x30C3;&#x30AF;&#x3092;&#x53D7;&#x3051;&#x53D6;&#x308B;&#x30A2;&#x30AF;&#x30B7;&#x30E7;&#x30F3;&#x3092;&#x5B9F;&#x88C5;&#x3057;&#x307E;&#x3059;&#x3002;</p>
+<p>app/controllers/users/omniauth_callbacks_controller.rb &#x3092;&#x30A8;&#x30C7;&#x30A3;&#x30BF;&#x3067;&#x958B;&#x304D;&#x307E;&#x3059;&#x3002;&#x7DE8;&#x96C6;&#x524D;&#x306F;&#x3053;&#x306E;&#x3088;&#x3046;&#x306A;&#x5185;&#x5BB9;&#x306B;&#x306A;&#x3063;&#x3066;&#x3044;&#x307E;&#x3059;&#x3002;</p>
 <pre><code class="lang-ruby"><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Users::OmniauthCallbacksController</span> <span class="hljs-inheritance">&lt; <span class="hljs-parent">ApplicationController</span></span></span>
 <span class="hljs-keyword">end</span>
 </code></pre>
@@ -634,7 +634,7 @@ config.action_mailer.raise_delivery_errors = <span class="hljs-keyword">false</s
 </code></pre>
 <p>ApplicationController&#x3067;&#x306F;&#x306A;&#x304F;Devise::OmniauthCallbacksController&#x3092;&#x7D99;&#x627F;&#x3059;&#x308B;&#x3088;&#x3046;&#x306B;&#x3057;&#x307E;&#x3059;&#x3002;</p>
 <pre><code>class Users::OmniauthCallbacksController &lt; Devise::OmniauthCallbacksController
-</code></pre><p>&#x30D7;&#x30ED;&#x30D0;&#x30A4;&#x30C0;&#x30FC;&#x540D;(&#x30B5;&#x30FC;&#x30D3;&#x30B9;)&#x306B;&#x5BFE;&#x5FDC;&#x3057;&#x305F;&#x30A2;&#x30AF;&#x30B7;&#x30E7;&#x30F3;&#x304C;&#x5FC5;&#x8981;&#x306A;&#x305F;&#x3081;&#x3001; twitter &#x3068;&#x3044;&#x3046;&#x30A2;&#x30AF;&#x30B7;&#x30E7;&#x30F3;&#x3092;&#x5B9F;&#x88C5;&#x3057;&#x3066;&#x3044;&#x307E;&#x3059;&#x3002;</p>
+</code></pre><p>&#x30D7;&#x30ED;&#x30D0;&#x30A4;&#x30C0;&#x30FC;&#x540D;(&#x30B5;&#x30FC;&#x30D3;&#x30B9;)&#x306B;&#x5BFE;&#x5FDC;&#x3057;&#x305F;&#x30A2;&#x30AF;&#x30B7;&#x30E7;&#x30F3;&#x304C;&#x5FC5;&#x8981;&#x306A;&#x305F;&#x3081;&#x3001;twitter&#x3068;&#x3044;&#x3046;&#x30A2;&#x30AF;&#x30B7;&#x30E7;&#x30F3;&#x3092;&#x5B9F;&#x88C5;&#x3057;&#x3066;&#x3044;&#x307E;&#x3059;&#x3002;</p>
 <pre><code class="lang-ruby"><span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">twitter</span></span>
   callback_from <span class="hljs-symbol">:twitter</span>
 <span class="hljs-keyword">end</span>
@@ -709,14 +709,42 @@ find_or_create_by&#x30E1;&#x30BD;&#x30C3;&#x30C9;&#x306F;ActiveRecord&#x306E;&#x
 <p>user_signed_in?&#x306F;Devise&#x306E;&#x6A5F;&#x80FD;&#x3067;&#x3001;&#x30ED;&#x30B0;&#x30A4;&#x30F3;&#x3057;&#x3066;&#x3044;&#x308B;&#x304B;&#x3092;&#x78BA;&#x8A8D;&#x3067;&#x304D;&#x307E;&#x3059;&#x3002;</p>
 <pre><code class="lang-ruby">&lt;% <span class="hljs-keyword">if</span> user_signed_in? %&gt;
 </code></pre>
-<p>&#x30B5;&#x30FC;&#x30D0;&#x30FC;&#x3092;&#x8D77;&#x52D5;&#x3057;&#x3001;&#x30ED;&#x30B0;&#x30A4;&#x30F3;&#x51FA;&#x6765;&#x308B;&#x304B;&#x78BA;&#x8A8D;&#x3057;&#x307E;&#x3059;&#x3002;</p>
+<p>&#x30B5;&#x30FC;&#x30D0;&#x30FC;&#x3092;&#x8D77;&#x52D5;&#x3057;&#x3001;&#x30ED;&#x30B0;&#x30A4;&#x30F3;&#x3067;&#x304D;&#x308B;&#x304B;&#x78BA;&#x8A8D;&#x3057;&#x307E;&#x3059;&#x3002;</p>
 <pre><code class="lang-sh">rails s
+</code></pre>
+<p>&#x30ED;&#x30B0;&#x30A4;&#x30F3;&#x5F8C;&#x306B;&#x30E6;&#x30FC;&#x30B6;&#x30FC;&#x304C;&#x4F5C;&#x6210;&#x3055;&#x308C;&#x3066;&#x3044;&#x308B;&#x304B;&#x78BA;&#x8A8D;&#x3057;&#x307E;&#x3059;&#x3002;&#x30B5;&#x30FC;&#x30D0;&#x30FC;&#x3092;&#x8D77;&#x52D5;&#x3057;&#x305F;&#x30BF;&#x30FC;&#x30DF;&#x30CA;&#x30EB;&#x3068;&#x306F;&#x5225;&#x306E;&#x30BF;&#x30FC;&#x30DF;&#x30CA;&#x30EB;&#x3067;&#x3001;Rails&#x30B3;&#x30F3;&#x30BD;&#x30FC;&#x30EB;&#x3092;&#x8D77;&#x52D5;&#x3057;&#x307E;&#x3059;&#x3002;</p>
+<pre><code class="lang-sh">rails c
+</code></pre>
+<p>&#x30B3;&#x30F3;&#x30BD;&#x30FC;&#x30EB;&#x3067;&#x6700;&#x5F8C;&#x306E;&#x30E6;&#x30FC;&#x30B6;&#x3092;&#x53D6;&#x5F97;&#x3057;&#x307E;&#x3059;&#x3002;</p>
+<pre><code>User.last
+</code></pre><p>&#x3053;&#x306E;&#x3088;&#x3046;&#x306A;&#x60C5;&#x5831;&#x304C;&#x4FDD;&#x5B58;&#x3055;&#x308C;&#x3066;&#x3044;&#x307E;&#x3057;&#x305F;&#x3002;</p>
+<pre><code class="lang-ruby">[<span class="hljs-number">1</span>] pry(main)&gt; <span class="hljs-constant">User</span>.last
+  <span class="hljs-constant">User</span> <span class="hljs-constant">Load</span> (<span class="hljs-number">0</span>.<span class="hljs-number">5</span>ms)  <span class="hljs-constant">SELECT</span>  <span class="hljs-string">&quot;users&quot;</span>.* <span class="hljs-constant">FROM</span> <span class="hljs-string">&quot;users&quot;</span>  <span class="hljs-constant">ORDER</span> <span class="hljs-constant">BY</span> <span class="hljs-string">&quot;users&quot;</span>.<span class="hljs-string">&quot;id&quot;</span> <span class="hljs-constant">DESC</span> <span class="hljs-constant">LIMIT</span> <span class="hljs-number">1</span>
+<span class="hljs-comment">#&lt;User:0x007fe6020122b0&gt; {</span>
+                        <span class="hljs-symbol">:id</span> =&gt; <span class="hljs-number">1</span>,
+                     <span class="hljs-symbol">:email</span> =&gt; <span class="hljs-string">&quot;1111111-twitter@example.com&quot;</span>,
+        <span class="hljs-symbol">:encrypted_password</span> =&gt; <span class="hljs-string">&quot;xxxxx&quot;</span>,
+      <span class="hljs-symbol">:reset_password_token</span> =&gt; <span class="hljs-keyword">nil</span>,
+    <span class="hljs-symbol">:reset_password_sent_at</span> =&gt; <span class="hljs-keyword">nil</span>,
+       <span class="hljs-symbol">:remember_created_at</span> =&gt; <span class="hljs-keyword">nil</span>,
+             <span class="hljs-symbol">:sign_in_count</span> =&gt; <span class="hljs-number">2</span>,
+        <span class="hljs-symbol">:current_sign_in_at</span> =&gt; <span class="hljs-constant">Thu</span>, <span class="hljs-number">17</span> <span class="hljs-constant">Dec</span> <span class="hljs-number">2015</span> <span class="hljs-number">22</span><span class="hljs-symbol">:</span><span class="hljs-number">53</span><span class="hljs-symbol">:</span><span class="hljs-number">46</span> <span class="hljs-constant">UTC</span> +<span class="hljs-number">00</span><span class="hljs-symbol">:</span><span class="hljs-number">00</span>,
+           <span class="hljs-symbol">:last_sign_in_at</span> =&gt; <span class="hljs-constant">Thu</span>, <span class="hljs-number">17</span> <span class="hljs-constant">Dec</span> <span class="hljs-number">2015</span> <span class="hljs-number">22</span><span class="hljs-symbol">:</span><span class="hljs-number">53</span><span class="hljs-symbol">:</span>09 <span class="hljs-constant">UTC</span> +<span class="hljs-number">00</span><span class="hljs-symbol">:</span><span class="hljs-number">00</span>,
+        <span class="hljs-symbol">:current_sign_in_ip</span> =&gt; <span class="hljs-string">&quot;::1&quot;</span>,
+           <span class="hljs-symbol">:last_sign_in_ip</span> =&gt; <span class="hljs-string">&quot;::1&quot;</span>,
+                <span class="hljs-symbol">:created_at</span> =&gt; <span class="hljs-constant">Thu</span>, <span class="hljs-number">17</span> <span class="hljs-constant">Dec</span> <span class="hljs-number">2015</span> <span class="hljs-number">22</span><span class="hljs-symbol">:</span><span class="hljs-number">53</span><span class="hljs-symbol">:</span>09 <span class="hljs-constant">UTC</span> +<span class="hljs-number">00</span><span class="hljs-symbol">:</span><span class="hljs-number">00</span>,
+                <span class="hljs-symbol">:updated_at</span> =&gt; <span class="hljs-constant">Thu</span>, <span class="hljs-number">17</span> <span class="hljs-constant">Dec</span> <span class="hljs-number">2015</span> <span class="hljs-number">22</span><span class="hljs-symbol">:</span><span class="hljs-number">53</span><span class="hljs-symbol">:</span><span class="hljs-number">46</span> <span class="hljs-constant">UTC</span> +<span class="hljs-number">00</span><span class="hljs-symbol">:</span><span class="hljs-number">00</span>,
+                  <span class="hljs-symbol">:provider</span> =&gt; <span class="hljs-string">&quot;twitter&quot;</span>,
+                       <span class="hljs-symbol">:uid</span> =&gt; <span class="hljs-string">&quot;1111111&quot;</span>,
+                 <span class="hljs-symbol">:user_name</span> =&gt; <span class="hljs-string">&quot;sada_h&quot;</span>,
+                <span class="hljs-symbol">:avatar_url</span> =&gt; <span class="hljs-string">&quot;http://pbs.twimg.com/profile_images/660349716178292737/y16rKnHm_normal.jpg&quot;</span>
 </code></pre>
 <h3 id="&#x8AB2;&#x984C;">&#x8AB2;&#x984C;</h3>
 <ul>
+<li>&#x30ED;&#x30B0;&#x30A4;&#x30F3;&#x5F8C;&#x306B;&#x30E6;&#x30FC;&#x30B6;&#x30FC;&#x540D;&#x3068;&#x30E6;&#x30FC;&#x30B6;&#x30FC;&#x306E;&#x30A2;&#x30A4;&#x30B3;&#x30F3;&#x304C;&#x8868;&#x793A;&#x51FA;&#x6765;&#x308B;&#x3088;&#x3046;&#x306B;&#x3057;&#x307E;&#x3057;&#x3087;&#x3046;&#x3002;</li>
 <li>Facebook&#x8A8D;&#x8A3C;&#x3092;&#x5B9F;&#x88C5;&#x3057;&#x307E;&#x3057;&#x3087;&#x3046;</li>
-<li>photo&#x3068;user&#x3092;&#x7D10;&#x4ED8;&#x3051;&#x308B;&#x3088;&#x3046;&#x306B;&#x3057;&#x307E;&#x3057;&#x3087;&#x3046;</li>
 <li>&#x30ED;&#x30B0;&#x30A4;&#x30F3;&#x3057;&#x3066;&#x3044;&#x306A;&#x3044;&#x3068;photo&#x306E;&#x65B0;&#x898F;&#x767B;&#x9332;/&#x7DE8;&#x96C6;/&#x524A;&#x9664;&#x304C;&#x3067;&#x304D;&#x306A;&#x3044;&#x3088;&#x3046;&#x306B;&#x3057;&#x307E;&#x3057;&#x3087;&#x3046;&#x3002;</li>
+<li>photo&#x3068;user&#x3092;&#x7D10;&#x4ED8;&#x3051;&#x307E;&#x3057;&#x3087;&#x3046;</li>
 </ul>
 
                     
