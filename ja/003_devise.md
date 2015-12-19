@@ -84,7 +84,7 @@ Some setup you must do manually if you haven't yet:
 ===============================================================================
 ```
 
-メッセージにしたがって、対応していきます。
+メッセージにしたがって、必要な部分の対応を行います。
 
 今回は利用しませんが、Deviseの機能を使うとユーザ作成や認証時にメールを送信できます。この機能を利用するための設定を追加します。
 
@@ -133,13 +133,13 @@ app/views/layouts/application.html.erbをエディタで開きます。この行
 
 メッセージが重複して表示されてしまうため、不要になったコードを削除します。
 
-app/views/photos/index.html.erbをエディタで開きます。この行を削除します。
+app/views/photos/index.html.erb をエディタで開きます。この行を削除します。
 
 ```html
 <p id="notice"><%= notice %></p>
 ```
 
-4、５の対応はいまは必要ないのでなにもしません。
+4と５の対応はいまは必要ないのでなにもしません。
 
 ## Userモデルの作成
 
@@ -227,8 +227,8 @@ Twitter認証で利用するカラムを追加します。
 
 |カラム|説明|
 |:--|:--|
-|provider|認証で使うサービス|
-|uid|ユーザーのID|
+|provider|認証で使うサービス。OmniAuthTwitterで利用します|
+|uid|ユーザーのID。OmniAuthTwitterで利用します|
 |user_name|ユーザ名|
 |avatar_url|アイコン画像のURL|
 
@@ -332,7 +332,7 @@ config.omniauth :twitter,
   Rails.application.secrets.twitter_api_secret
 ```
 
-app/models/user.rb に Omniauth を利用する設定を追加します。この行の最後に
+app/models/user.rb に OmniAuth を利用する設定を追加します。この行の最後に
 
 ```ruby
 devise :database_authenticatable, :registerable,
@@ -385,9 +385,9 @@ rails g controller users/omniauth_callbacks
       create      app/assets/stylesheets/users/omniauth_callbacks.scss
 ```
 
-コントローラーの中身はこのようになっています。
+コントローラーにコールバックを受け取るアクションを実装します。
 
-app/controllers/users/omniauth_callbacks_controller.rb
+app/controllers/users/omniauth_callbacks_controller.rb をエディタで開きます。編集前はこのような内容になっています。
 
 ```ruby
 class Users::OmniauthCallbacksController < ApplicationController
@@ -428,7 +428,7 @@ ApplicationControllerではなくDevise::OmniauthCallbacksControllerを継承す
 class Users::OmniauthCallbacksController < Devise::OmniauthCallbacksController
 ```
 
-プロバイダー名(サービス)に対応したアクションが必要なため、 twitter というアクションを実装しています。
+プロバイダー名(サービス)に対応したアクションが必要なため、twitterというアクションを実装しています。
 
 ```ruby
 def twitter
@@ -541,14 +541,52 @@ user_signed_in?はDeviseの機能で、ログインしているかを確認で�
 <% if user_signed_in? %>
 ```
 
-サーバーを起動し、ログイン出来るか確認します。
+サーバーを起動し、ログインできるか確認します。
 
 ```sh
 rails s
 ```
 
+ログイン後にユーザーが作成されているか確認します。サーバーを起動したターミナルとは別のターミナルで、Railsコンソールを起動します。
+
+```sh
+rails c
+```
+
+コンソールで最後のユーザを取得します。
+
+```
+User.last
+```
+
+このような情報が保存されていました。
+
+```ruby
+[1] pry(main)> User.last
+  User Load (0.5ms)  SELECT  "users".* FROM "users"  ORDER BY "users"."id" DESC LIMIT 1
+#<User:0x007fe6020122b0> {
+                        :id => 1,
+                     :email => "1111111-twitter@example.com",
+        :encrypted_password => "xxxxx",
+      :reset_password_token => nil,
+    :reset_password_sent_at => nil,
+       :remember_created_at => nil,
+             :sign_in_count => 2,
+        :current_sign_in_at => Thu, 17 Dec 2015 22:53:46 UTC +00:00,
+           :last_sign_in_at => Thu, 17 Dec 2015 22:53:09 UTC +00:00,
+        :current_sign_in_ip => "::1",
+           :last_sign_in_ip => "::1",
+                :created_at => Thu, 17 Dec 2015 22:53:09 UTC +00:00,
+                :updated_at => Thu, 17 Dec 2015 22:53:46 UTC +00:00,
+                  :provider => "twitter",
+                       :uid => "1111111",
+                 :user_name => "sada_h",
+                :avatar_url => "http://pbs.twimg.com/profile_images/660349716178292737/y16rKnHm_normal.jpg"
+```
+
 ### 課題
 
+* ログイン後にユーザー名とユーザーのアイコンが表示出来るようにしましょう。
 * Facebook認証を実装しましょう
-* photoとuserを紐付けるようにしましょう
 * ログインしていないとphotoの新規登録/編集/削除ができないようにしましょう。
+* photoとuserを紐付けましょう

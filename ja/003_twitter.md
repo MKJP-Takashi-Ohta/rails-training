@@ -6,7 +6,7 @@ Twitterにログインした状態で [https://apps.twitter.com/](https://apps.t
 
 「Create New App」ボタンでアプリケーション登録を行います。
 
-![](../images/twitter-app.png)
+![Create New App - Twitter](../images/twitter-app.png)
 
 Application Detailsで、以下の内容を登録します。
 
