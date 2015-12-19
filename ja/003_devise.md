@@ -325,7 +325,7 @@ production:
 
 config/initializers/devise.rbで、Twitter認証で利用するKeyを設定します。
 
-最後のendの前に2行追加します。
+最後のendの前に3行追加します。
 
 ```ruby
   config.omniauth :twitter,
