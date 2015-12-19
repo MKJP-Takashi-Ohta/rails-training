@@ -511,6 +511,20 @@ group :development, :test do
 end
 ```
 
+bundle installで、gemをインストールします。
+
+```ruby
+bundle install
+```
+
+Railsサーバが起動済みであれば、一度停止してください。
+
+Railsサーバを起動すると、pryが有効になります。
+
+```
+rails s
+```
+
 それぞれのgemはこのような機能を持ちます。
 
 |gem||
