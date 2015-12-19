@@ -46,7 +46,7 @@
     <body>
         
         
-    <div class="book" data-level="4.2" data-chapter-title="認証機能(Devise)" data-filepath="ja/003_devise.md" data-basepath=".." data-revision="Sat Dec 19 2015 14:43:47 GMT+0900 (JST)">
+    <div class="book" data-level="4.2" data-chapter-title="認証機能(Devise)" data-filepath="ja/003_devise.md" data-basepath=".." data-revision="Sat Dec 19 2015 15:31:04 GMT+0900 (JST)">
     
 
 <div class="book-summary">
@@ -650,6 +650,7 @@ config.action_mailer.raise_delivery_errors = <span class="hljs-keyword">false</s
 <p>&#x6B63;&#x3057;&#x304F;&#x4FDD;&#x5B58;&#x3055;&#x308C;&#x3066;&#x3044;&#x308B;&#x5834;&#x5408;&#x306F;&#x3001;&#x8868;&#x793A;&#x3059;&#x308B;&#x30E1;&#x30C3;&#x30BB;&#x30FC;&#x30B8;&#x3092;&#x8A2D;&#x5B9A;&#x3057;&#x3001;Devise&#x306E;&#x6A5F;&#x80FD;&#x3092;&#x4F7F;&#x3063;&#x3066;&#x30EA;&#x30C0;&#x30A4;&#x30EC;&#x30AF;&#x30C8;&#x3057;&#x307E;&#x3059;&#x3002;</p>
 <h3 id="&#x30E6;&#x30FC;&#x30B6;&#x30FC;&#x60C5;&#x5831;&#x306E;&#x691C;&#x7D22;&#x3068;&#x4FDD;&#x5B58;">&#x30E6;&#x30FC;&#x30B6;&#x30FC;&#x60C5;&#x5831;&#x306E;&#x691C;&#x7D22;&#x3068;&#x4FDD;&#x5B58;</h3>
 <p>User&#x30E2;&#x30C7;&#x30EB;&#x3067;&#x30E6;&#x30FC;&#x30B6;&#x30FC;&#x60C5;&#x5831;&#x306E;&#x691C;&#x7D22;&#x3068;&#x4FDD;&#x5B58;&#x3092;&#x3067;&#x304D;&#x308B;&#x3088;&#x3046;&#x306B;&#x3057;&#x307E;&#x3059;&#x3002;</p>
+<p>app/models/user.rb&#x3092;&#x30A8;&#x30C7;&#x30A3;&#x30BF;&#x3067;&#x958B;&#x304D;&#x307E;&#x3059;&#x3002;&#x4EE5;&#x4E0B;&#x306E;&#x3088;&#x3046;&#x306B;&#x66F8;&#x304D;&#x63DB;&#x3048;&#x307E;&#x3059;&#x3002;</p>
 <pre><code class="lang-ruby"><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">User</span> <span class="hljs-inheritance">&lt; <span class="hljs-parent">ActiveRecord::Base</span></span></span>
   <span class="hljs-comment"># Include default devise modules. Others available are:</span>
   <span class="hljs-comment"># :confirmable, :lockable, :timeoutable and :omniauthable</span>
