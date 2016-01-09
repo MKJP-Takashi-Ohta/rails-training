@@ -75,17 +75,17 @@ test:
   <<: *default_facebook
 ```
 
-本番環境では環境変数からtwitter認証の情報を取得するようにします。この行のあとに
+本番環境では環境変数からFacebook認証の情報を取得するようにします。この行のあとに
 
 ```ruby
-twitter_api_secret: <%= ENV["TWITTER_API_SECRET"] %>
+twitter_api_secret: <%= ENV["FACEBOOK_API_SECRET"] %>
 ```
 
 この行を追加します。
 
 ```ruby
-facebook_api_key: <%= ENV["TWITTER_API_KEY"] %>
-facebook_api_secret: <%= ENV["TWITTER_API_SECRET"] %>
+facebook_api_key: <%= ENV["FACEBOOK_API_KEY"] %>
+facebook_api_secret: <%= ENV["FACEBOOK_API_SECRET"] %>
 ```
 
 config/initializers/devise.rbで、Facebook認証で利用するKeyを設定します。この行のあとに
@@ -126,7 +126,7 @@ app/models/user.rbをエディタで開きます。self.find_or_create_from_oaut
 def self.find_or_create_from_oauth(auth)
   User.find_or_create_by(provider: auth.provider, uid: auth.uid) do |user|
     user.user_name  = auth.info.nickname || auth.info.name
-    user.avatar_url = auth.info.image || auth.info.image
+    user.avatar_url = auth.info.image
     user.email      = User.dummy_email(auth)
     user.password   = Devise.friendly_token[0, 20]
   end
