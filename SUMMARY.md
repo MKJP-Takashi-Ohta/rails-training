@@ -8,6 +8,10 @@
   * [デザインの適用(Bootstrapの導入)](ja/002_bootstrap.md)
 * [アプリケーション開発 2](ja/003.md)
   * [Twitter Developer登録](ja/003_twitter.md)
-  * [認証機能(Devise)](ja/003_devise.md)
-* アプリケーション開発 3
+  * [認証機能(Devise/Twitter)](ja/003_devise.md)
+* [アプリケーション開発 3](ja/004.md)
+  * [ユーザー情報の表示](ja/004_user_info.md)
+  * [認証機能(Devise/Facebook)](ja/004_facebook.md)
+  * [UserとPhotoの関連付け](ja/004_relation.md)
+  * [ログインチェック](ja/004_login_check.md)
   * コメント機能
