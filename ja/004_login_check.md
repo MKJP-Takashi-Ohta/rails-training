@@ -67,20 +67,16 @@ app/views/photos/index.html.erb をエディタで開きます。この行の前
 app/views/photos/show.html.erb をエディタで開きます。この行の前後を変更します。
 
 ```html
-<p>
-  <%= link_to 'Edit', edit_photo_path(@photo) %>
-  <%= link_to 'Destroy', @photo, method: :delete, data: { confirm: 'Are you sure?' } %>
-</p>
+<%= link_to 'Edit', edit_photo_path(@photo) %>
+<%= link_to 'Destroy', @photo, method: :delete, data: { confirm: 'Are you sure?' } %>
 ```
 
 このように変更します。ログイン済みで、写真のユーザーとログインユーザーが一致している場合は、リンクを表示します。
 
 ```html
 <% if user_signed_in? && @photo.user == current_user %>
-  <p>
-    <%= link_to 'Edit', edit_photo_path(@photo) %>
-    <%= link_to 'Destroy', @photo, method: :delete, data: { confirm: 'Are you sure?' } %>
-  </p>
+  <%= link_to 'Edit', edit_photo_path(@photo) %>
+  <%= link_to 'Destroy', @photo, method: :delete, data: { confirm: 'Are you sure?' } %>
 <% end %>
 ```
 
