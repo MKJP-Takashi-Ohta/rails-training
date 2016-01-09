@@ -14,4 +14,6 @@
   * [認証機能(Devise/Facebook)](ja/004_facebook.md)
   * [UserとPhotoの関連付け](ja/004_relation.md)
   * [ログインチェック](ja/004_login_check.md)
-  * コメント機能
+  * [コメント機能](ja/004_comments.md)
+  * [課題](ja/004_homework.md)
+* [総合課題](ja/005.md)
