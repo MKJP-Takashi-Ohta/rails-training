@@ -48,7 +48,7 @@
     <body>
         
         
-    <div class="book" data-level="5.4" data-chapter-title="ログインチェック" data-filepath="ja/004_login_check.md" data-basepath=".." data-revision="Sat Jan 09 2016 14:28:55 GMT+0900 (JST)">
+    <div class="book" data-level="5.4" data-chapter-title="ログインチェック" data-filepath="ja/004_login_check.md" data-basepath=".." data-revision="Sat Jan 09 2016 15:20:33 GMT+0900 (JST)">
     
 
 <div class="book-summary">
@@ -456,17 +456,13 @@
 <span class="hljs-tag">&lt;<span class="hljs-title">%</span> <span class="hljs-attribute">end</span> %&gt;</span>
 </code></pre>
 <p>app/views/photos/show.html.erb &#x3092;&#x30A8;&#x30C7;&#x30A3;&#x30BF;&#x3067;&#x958B;&#x304D;&#x307E;&#x3059;&#x3002;&#x3053;&#x306E;&#x884C;&#x306E;&#x524D;&#x5F8C;&#x3092;&#x5909;&#x66F4;&#x3057;&#x307E;&#x3059;&#x3002;</p>
-<pre><code class="lang-html"><span class="hljs-tag">&lt;<span class="hljs-title">p</span>&gt;</span>
-  <span class="hljs-tag">&lt;<span class="hljs-title">%=</span> <span class="hljs-attribute">link_to</span> &apos;<span class="hljs-attribute">Edit</span>&apos;, <span class="hljs-attribute">edit_photo_path</span>(@<span class="hljs-attribute">photo</span>) %&gt;</span>
-  <span class="hljs-tag">&lt;<span class="hljs-title">%=</span> <span class="hljs-attribute">link_to</span> &apos;<span class="hljs-attribute">Destroy</span>&apos;, @<span class="hljs-attribute">photo</span>, <span class="hljs-attribute">method:</span> <span class="hljs-attribute">:delete</span>, <span class="hljs-attribute">data:</span> { <span class="hljs-attribute">confirm:</span> &apos;<span class="hljs-attribute">Are</span> <span class="hljs-attribute">you</span> <span class="hljs-attribute">sure</span>?&apos; } %&gt;</span>
-<span class="hljs-tag">&lt;/<span class="hljs-title">p</span>&gt;</span>
+<pre><code class="lang-html"><span class="hljs-tag">&lt;<span class="hljs-title">%=</span> <span class="hljs-attribute">link_to</span> &apos;<span class="hljs-attribute">Edit</span>&apos;, <span class="hljs-attribute">edit_photo_path</span>(@<span class="hljs-attribute">photo</span>) %&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-title">%=</span> <span class="hljs-attribute">link_to</span> &apos;<span class="hljs-attribute">Destroy</span>&apos;, @<span class="hljs-attribute">photo</span>, <span class="hljs-attribute">method:</span> <span class="hljs-attribute">:delete</span>, <span class="hljs-attribute">data:</span> { <span class="hljs-attribute">confirm:</span> &apos;<span class="hljs-attribute">Are</span> <span class="hljs-attribute">you</span> <span class="hljs-attribute">sure</span>?&apos; } %&gt;</span>
 </code></pre>
 <p>&#x3053;&#x306E;&#x3088;&#x3046;&#x306B;&#x5909;&#x66F4;&#x3057;&#x307E;&#x3059;&#x3002;&#x30ED;&#x30B0;&#x30A4;&#x30F3;&#x6E08;&#x307F;&#x3067;&#x3001;&#x5199;&#x771F;&#x306E;&#x30E6;&#x30FC;&#x30B6;&#x30FC;&#x3068;&#x30ED;&#x30B0;&#x30A4;&#x30F3;&#x30E6;&#x30FC;&#x30B6;&#x30FC;&#x304C;&#x4E00;&#x81F4;&#x3057;&#x3066;&#x3044;&#x308B;&#x5834;&#x5408;&#x306F;&#x3001;&#x30EA;&#x30F3;&#x30AF;&#x3092;&#x8868;&#x793A;&#x3057;&#x307E;&#x3059;&#x3002;</p>
 <pre><code class="lang-html"><span class="hljs-tag">&lt;<span class="hljs-title">%</span> <span class="hljs-attribute">if</span> <span class="hljs-attribute">user_signed_in</span>? &amp;&amp; @<span class="hljs-attribute">photo.user</span> =<span class="hljs-value">=</span> <span class="hljs-attribute">current_user</span> %&gt;</span>
-  <span class="hljs-tag">&lt;<span class="hljs-title">p</span>&gt;</span>
-    <span class="hljs-tag">&lt;<span class="hljs-title">%=</span> <span class="hljs-attribute">link_to</span> &apos;<span class="hljs-attribute">Edit</span>&apos;, <span class="hljs-attribute">edit_photo_path</span>(@<span class="hljs-attribute">photo</span>) %&gt;</span>
-    <span class="hljs-tag">&lt;<span class="hljs-title">%=</span> <span class="hljs-attribute">link_to</span> &apos;<span class="hljs-attribute">Destroy</span>&apos;, @<span class="hljs-attribute">photo</span>, <span class="hljs-attribute">method:</span> <span class="hljs-attribute">:delete</span>, <span class="hljs-attribute">data:</span> { <span class="hljs-attribute">confirm:</span> &apos;<span class="hljs-attribute">Are</span> <span class="hljs-attribute">you</span> <span class="hljs-attribute">sure</span>?&apos; } %&gt;</span>
-  <span class="hljs-tag">&lt;/<span class="hljs-title">p</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-title">%=</span> <span class="hljs-attribute">link_to</span> &apos;<span class="hljs-attribute">Edit</span>&apos;, <span class="hljs-attribute">edit_photo_path</span>(@<span class="hljs-attribute">photo</span>) %&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-title">%=</span> <span class="hljs-attribute">link_to</span> &apos;<span class="hljs-attribute">Destroy</span>&apos;, @<span class="hljs-attribute">photo</span>, <span class="hljs-attribute">method:</span> <span class="hljs-attribute">:delete</span>, <span class="hljs-attribute">data:</span> { <span class="hljs-attribute">confirm:</span> &apos;<span class="hljs-attribute">Are</span> <span class="hljs-attribute">you</span> <span class="hljs-attribute">sure</span>?&apos; } %&gt;</span>
 <span class="hljs-tag">&lt;<span class="hljs-title">%</span> <span class="hljs-attribute">end</span> %&gt;</span>
 </code></pre>
 <p><code>@photo.user</code> &#x3067;&#x3001;Photo&#x304B;&#x3089;User&#x3092;&#x53D6;&#x5F97;&#x3057;&#x3066;&#x3044;&#x307E;&#x3059;&#x3002;&#x3053;&#x306E;&#x307E;&#x307E;&#x3060;&#x3068;View&#x304B;&#x3089;DB&#x306B;&#x5BFE;&#x3059;&#x308B;&#x30AF;&#x30A8;&#x30EA;&#x30FC;&#x304C;&#x767A;&#x884C;&#x3055;&#x308C;&#x3066;&#x3057;&#x307E;&#x3046;&#x305F;&#x3081;&#x3001;Controller&#x3067;&#x5408;&#x308F;&#x305B;&#x3066;&#x53D6;&#x5F97;&#x3059;&#x308B;&#x3088;&#x3046;&#x306B;&#x3057;&#x307E;&#x3059;&#x3002;</p>
