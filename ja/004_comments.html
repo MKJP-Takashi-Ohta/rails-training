@@ -1,0 +1,578 @@
+<!DOCTYPE HTML>
+<html lang="en" >
+    
+    <head>
+        
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <title>コメント機能 | Rails Training</title>
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 2.5.2">
+        
+        
+        <meta name="HandheldFriendly" content="true"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+        <meta name="apple-mobile-web-app-capable" content="yes">
+        <meta name="apple-mobile-web-app-status-bar-style" content="black">
+        <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../gitbook/images/apple-touch-icon-precomposed-152.png">
+        <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
+        
+    <link rel="stylesheet" href="../gitbook/style.css">
+    
+        
+        <link rel="stylesheet" href="../gitbook/plugins/gitbook-plugin-highlight/website.css">
+        
+    
+        
+        <link rel="stylesheet" href="../gitbook/plugins/gitbook-plugin-search/search.css">
+        
+    
+        
+        <link rel="stylesheet" href="../gitbook/plugins/gitbook-plugin-fontsettings/website.css">
+        
+    
+    
+
+        
+    
+    
+    <link rel="next" href="../ja/004_homework.html" />
+    
+    
+    <link rel="prev" href="../ja/004_login_check.html" />
+    
+
+        
+    </head>
+    <body>
+        
+        
+    <div class="book" data-level="5.5" data-chapter-title="コメント機能" data-filepath="ja/004_comments.md" data-basepath=".." data-revision="Sat Jan 09 2016 13:10:52 GMT+0900 (JST)">
+    
+
+<div class="book-summary">
+    <nav role="navigation">
+        <ul class="summary">
+            
+            
+            
+            
+
+            
+
+            
+    
+        <li class="chapter " data-level="0" data-path="index.html">
+            
+                
+                    <a href="../index.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                        Introduction
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="1" data-path="ja/introduction.html">
+            
+                
+                    <a href="../ja/introduction.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>1.</b>
+                        
+                        はじめに
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="2" data-path="ja/001.html">
+            
+                
+                    <a href="../ja/001.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>2.</b>
+                        
+                        Ruby on Rails入門
+                    </a>
+            
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="2.1" data-path="ja/001_environment.html">
+            
+                
+                    <a href="../ja/001_environment.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>2.1.</b>
+                        
+                        環境構築
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="2.2" data-path="ja/001_rails.html">
+            
+                
+                    <a href="../ja/001_rails.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>2.2.</b>
+                        
+                        Ruby on Rails基礎
+                    </a>
+            
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="3" data-path="ja/002.html">
+            
+                
+                    <a href="../ja/002.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>3.</b>
+                        
+                        アプリケーション開発 1
+                    </a>
+            
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="3.1" data-path="ja/002_models.html">
+            
+                
+                    <a href="../ja/002_models.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>3.1.</b>
+                        
+                        基本的なモデルの実装
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="3.2" data-path="ja/002_image_upload.html">
+            
+                
+                    <a href="../ja/002_image_upload.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>3.2.</b>
+                        
+                        画像アップロード(CarrierWave)
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="3.3" data-path="ja/002_bootstrap.html">
+            
+                
+                    <a href="../ja/002_bootstrap.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>3.3.</b>
+                        
+                        デザインの適用(Bootstrapの導入)
+                    </a>
+            
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="4" data-path="ja/003.html">
+            
+                
+                    <a href="../ja/003.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>4.</b>
+                        
+                        アプリケーション開発 2
+                    </a>
+            
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="4.1" data-path="ja/003_twitter.html">
+            
+                
+                    <a href="../ja/003_twitter.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>4.1.</b>
+                        
+                        Twitter Developer登録
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="4.2" data-path="ja/003_devise.html">
+            
+                
+                    <a href="../ja/003_devise.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>4.2.</b>
+                        
+                        認証機能(Devise/Twitter)
+                    </a>
+            
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="5" data-path="ja/004.html">
+            
+                
+                    <a href="../ja/004.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>5.</b>
+                        
+                        アプリケーション開発 3
+                    </a>
+            
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="5.1" data-path="ja/004_user_info.html">
+            
+                
+                    <a href="../ja/004_user_info.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>5.1.</b>
+                        
+                        ユーザー情報の表示
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="5.2" data-path="ja/004_facebook.html">
+            
+                
+                    <a href="../ja/004_facebook.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>5.2.</b>
+                        
+                        認証機能(Devise/Facebook)
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="5.3" data-path="ja/004_relation.html">
+            
+                
+                    <a href="../ja/004_relation.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>5.3.</b>
+                        
+                        UserとPhotoの関連付け
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="5.4" data-path="ja/004_login_check.html">
+            
+                
+                    <a href="../ja/004_login_check.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>5.4.</b>
+                        
+                        ログインチェック
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter active" data-level="5.5" data-path="ja/004_comments.html">
+            
+                
+                    <a href="../ja/004_comments.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>5.5.</b>
+                        
+                        コメント機能
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="5.6" data-path="ja/004_homework.html">
+            
+                
+                    <a href="../ja/004_homework.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>5.6.</b>
+                        
+                        課題
+                    </a>
+            
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="6" data-path="ja/005.html">
+            
+                
+                    <a href="../ja/005.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>6.</b>
+                        
+                        総合課題
+                    </a>
+            
+            
+        </li>
+    
+
+
+            
+            <li class="divider"></li>
+            <li>
+                <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+                    Published with GitBook
+                </a>
+            </li>
+            
+        </ul>
+    </nav>
+</div>
+
+    <div class="book-body">
+        <div class="body-inner">
+            <div class="book-header" role="navigation">
+    <!-- Actions Left -->
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href="../" >Rails Training</a>
+    </h1>
+</div>
+
+            <div class="page-wrapper" tabindex="-1" role="main">
+                <div class="page-inner">
+                
+                
+                    <section class="normal" id="section-">
+                    
+                        <h1 id="&#x30B3;&#x30E1;&#x30F3;&#x30C8;&#x6A5F;&#x80FD;">&#x30B3;&#x30E1;&#x30F3;&#x30C8;&#x6A5F;&#x80FD;</h1>
+<p>&#x30A2;&#x30D7;&#x30EA;&#x30B1;&#x30FC;&#x30B7;&#x30E7;&#x30F3;&#x306B;&#x30B3;&#x30E1;&#x30F3;&#x30C8;&#x6A5F;&#x80FD;&#x3092;&#x8FFD;&#x52A0;&#x3057;&#x307E;&#x3059;&#x3002;&#x30ED;&#x30B0;&#x30A4;&#x30F3;&#x3057;&#x3066;&#x3044;&#x308B;&#x30E6;&#x30FC;&#x30B6;&#x30FC;&#x304C;&#x30B3;&#x30E1;&#x30F3;&#x30C8;&#x3067;&#x304D;&#x308B;&#x3088;&#x3046;&#x306B;&#x3057;&#x307E;&#x3059;&#x3002;</p>
+<h2 id="scaffold">scaffold</h2>
+<p>&#x30B3;&#x30E1;&#x30F3;&#x30C8;&#x306E;scaffold&#x3092;&#x81EA;&#x52D5;&#x751F;&#x6210;&#x3057;&#x307E;&#x3059;&#x3002;&#x30B3;&#x30E1;&#x30F3;&#x30C8;&#x306F;User&#x3068;Photo&#x306B;&#x95A2;&#x9023;&#x4ED8;&#x3051;&#x307E;&#x3059;&#x3002;&#x30B3;&#x30F3;&#x30BD;&#x30FC;&#x30EB;&#x3067;&#x4EE5;&#x4E0B;&#x306E;&#x30B3;&#x30DE;&#x30F3;&#x30C9;&#x3092;&#x5B9F;&#x884C;&#x3057;&#x307E;&#x3059;&#x3002;</p>
+<pre><code class="lang-sh">rails g scaffold comment user_id:<span class="hljs-built_in">integer</span> photo_id:<span class="hljs-built_in">integer</span> body:text
+</code></pre>
+<p>&#x30DE;&#x30A4;&#x30B0;&#x30EC;&#x30FC;&#x30B7;&#x30E7;&#x30F3;&#x3092;&#x884C;&#x3044;&#x307E;&#x3059;&#x3002;&#x30B3;&#x30F3;&#x30BD;&#x30FC;&#x30EB;&#x3067;&#x4EE5;&#x4E0B;&#x306E;&#x30B3;&#x30DE;&#x30F3;&#x30C9;&#x3092;&#x5B9F;&#x884C;&#x3057;&#x307E;&#x3059;&#x3002;</p>
+<pre><code class="lang-sh">rake db:migrate
+</code></pre>
+<h2 id="comment&#x3068;user&#x3068;photo&#x306E;&#x95A2;&#x9023;&#x4ED8;&#x3051;">Comment&#x3068;User&#x3068;Photo&#x306E;&#x95A2;&#x9023;&#x4ED8;&#x3051;</h2>
+<p>app/models/user.rb &#x3092;&#x30A8;&#x30C7;&#x30A3;&#x30BF;&#x3067;&#x958B;&#x304D;&#x307E;&#x3059;&#x3002;&#x3053;&#x306E;&#x884C;&#x306E;&#x3042;&#x3068;&#x306B;</p>
+<pre><code class="lang-ruby">has_many <span class="hljs-symbol">:photos</span>
+</code></pre>
+<p>&#x3053;&#x306E;&#x884C;&#x3092;&#x8FFD;&#x52A0;&#x3057;&#x307E;&#x3059;&#x3002;</p>
+<pre><code class="lang-ruby">has_many <span class="hljs-symbol">:comments</span>
+</code></pre>
+<p>app/models/photo.rb &#x3092;&#x30A8;&#x30C7;&#x30A3;&#x30BF;&#x3067;&#x958B;&#x304D;&#x307E;&#x3059;&#x3002;&#x3053;&#x306E;&#x884C;&#x306E;&#x3042;&#x3068;&#x306B;</p>
+<pre><code class="lang-ruby">belongs_to <span class="hljs-symbol">:user</span>
+</code></pre>
+<p>&#x3053;&#x306E;&#x884C;&#x3092;&#x8FFD;&#x52A0;&#x3057;&#x307E;&#x3059;&#x3002;</p>
+<pre><code class="lang-ruby">has_many <span class="hljs-symbol">:comments</span>
+</code></pre>
+<p>app/models/comment.rb &#x3092;&#x30A8;&#x30C7;&#x30A3;&#x30BF;&#x3067;&#x958B;&#x304D;&#x307E;&#x3059;&#x3002;&#x3053;&#x306E;&#x884C;&#x306E;&#x3042;&#x3068;&#x306B;</p>
+<pre><code class="lang-ruby"><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Comment</span> <span class="hljs-inheritance">&lt; <span class="hljs-parent">ActiveRecord::Base</span></span></span>
+</code></pre>
+<p>&#x3053;&#x306E;&#x884C;&#x3092;&#x8FFD;&#x52A0;&#x3057;&#x307E;&#x3059;&#x3002;</p>
+<pre><code class="lang-ruby">  belongs_to <span class="hljs-symbol">:user</span>
+  belongs_to <span class="hljs-symbol">:photo</span>
+</code></pre>
+<p>&#x30B5;&#x30FC;&#x30D0;&#x30FC;&#x3092;&#x8D77;&#x52D5;&#x3057;&#x305F;&#x30BF;&#x30FC;&#x30DF;&#x30CA;&#x30EB;&#x3068;&#x306F;&#x5225;&#x306E;&#x30BF;&#x30FC;&#x30DF;&#x30CA;&#x30EB;&#x3067;&#x3001;Rails&#x30B3;&#x30F3;&#x30BD;&#x30FC;&#x30EB;&#x3092;&#x8D77;&#x52D5;&#x3057;&#x307E;&#x3059;&#x3002;</p>
+<pre><code class="lang-sh">rails c
+</code></pre>
+<p>Photo&#x3068;Comment&#x304C;&#x95A2;&#x9023;&#x4ED8;&#x3051;&#x3089;&#x308C;&#x3066;&#x3044;&#x308B;&#x304B;&#x78BA;&#x8A8D;&#x3057;&#x307E;&#x3059;&#x3002;&#x307E;&#x3060;&#x30C7;&#x30FC;&#x30BF;&#x304C;&#x306A;&#x3044;&#x306E;&#x3067;&#x4F55;&#x3082;&#x53D6;&#x5F97;&#x3067;&#x304D;&#x307E;&#x305B;&#x3093;&#x304C;&#x3001;&#x30A8;&#x30E9;&#x30FC;&#x306A;&#x3069;&#x304C;&#x767A;&#x751F;&#x3057;&#x306A;&#x3044;&#x3053;&#x3068;&#x3092;&#x78BA;&#x8A8D;&#x3057;&#x307E;&#x3059;&#x3002;</p>
+<pre><code>Photo.last.comments
+</code></pre><p>User&#x3068;Comment&#x304C;&#x95A2;&#x9023;&#x4ED8;&#x3051;&#x3089;&#x308C;&#x3066;&#x3044;&#x308B;&#x304B;&#x78BA;&#x8A8D;&#x3057;&#x307E;&#x3059;&#x3002;&#x307E;&#x3060;&#x30C7;&#x30FC;&#x30BF;&#x304C;&#x306A;&#x3044;&#x306E;&#x3067;&#x4F55;&#x3082;&#x53D6;&#x5F97;&#x3067;&#x304D;&#x307E;&#x305B;&#x3093;&#x304C;&#x3001;&#x30A8;&#x30E9;&#x30FC;&#x306A;&#x3069;&#x304C;&#x767A;&#x751F;&#x3057;&#x306A;&#x3044;&#x3053;&#x3068;&#x3092;&#x78BA;&#x8A8D;&#x3057;&#x307E;&#x3059;&#x3002;</p>
+<pre><code>User.last.comments
+</code></pre><h2 id="controller&#x306E;&#x4FEE;&#x6B63;">Controller&#x306E;&#x4FEE;&#x6B63;</h2>
+<p>app/controllers/photos_controller.rb &#x3092;&#x30A8;&#x30C7;&#x30A3;&#x30BF;&#x3067;&#x958B;&#x304D;&#x307E;&#x3059;&#x3002;show&#x30A2;&#x30AF;&#x30B7;&#x30E7;&#x30F3;&#x3092;&#x4FEE;&#x6B63;&#x3057;&#x3066;&#x3001;&#x30B3;&#x30E1;&#x30F3;&#x30C8;&#x3092;&#x8868;&#x793A;&#x3067;&#x304D;&#x308B;&#x3088;&#x3046;&#x306B;&#x3057;&#x307E;&#x3059;&#x3002;&#x3053;&#x306E;&#x30B3;&#x30FC;&#x30C9;&#x3092;</p>
+<pre><code class="lang-ruby"><span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">show</span></span>
+  <span class="hljs-variable">@photo</span> = <span class="hljs-constant">Photo</span>.includes(<span class="hljs-symbol">:user</span>).find(params[<span class="hljs-symbol">:id</span>])
+<span class="hljs-keyword">end</span>
+</code></pre>
+<p>&#x3053;&#x306E;&#x3088;&#x3046;&#x306B;&#x5909;&#x66F4;&#x3057;&#x3066;&#x304F;&#x3060;&#x3055;&#x3044;&#x3002;</p>
+<pre><code class="lang-ruby"><span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">show</span></span>
+  <span class="hljs-variable">@photo</span> = <span class="hljs-constant">Photo</span>.includes(<span class="hljs-symbol">:user</span>).find(params[<span class="hljs-symbol">:id</span>])
+  <span class="hljs-variable">@comments</span> = <span class="hljs-variable">@photo</span>.comments.includes(<span class="hljs-symbol">:user</span>).all
+  <span class="hljs-variable">@comment</span>  = <span class="hljs-variable">@photo</span>.comments.build(<span class="hljs-symbol">user_id:</span> current_user.id) <span class="hljs-keyword">if</span> current_user
+<span class="hljs-keyword">end</span>
+</code></pre>
+<p><code>@comments</code> &#x306B;Photo&#x306B;&#x95A2;&#x9023;&#x3057;&#x305F;&#x30B3;&#x30E1;&#x30F3;&#x30C8;&#x3092;&#x683C;&#x7D0D;&#x3057;&#x307E;&#x3059;&#x3002;user_name&#x306E;&#x8868;&#x793A;&#x3092;&#x884C;&#x3046;&#x305F;&#x3081;&#x3001;&#x30B3;&#x30E1;&#x30F3;&#x30C8;&#x306B;&#x95A2;&#x9023;&#x3057;&#x305F;User&#x3082;&#x53D6;&#x5F97;&#x3057;&#x3066;&#x304A;&#x304D;&#x307E;&#x3059;&#x3002;</p>
+<pre><code class="lang-ruby"><span class="hljs-variable">@comments</span> = <span class="hljs-variable">@photo</span>.comments.includes(<span class="hljs-symbol">:user</span>).all
+</code></pre>
+<p><code>@comment</code> &#x306F;&#x30B3;&#x30E1;&#x30F3;&#x30C8;&#x3092;&#x65B0;&#x898F;&#x4F5C;&#x6210;&#x3059;&#x308B;&#x305F;&#x3081;&#x306E;&#x30A4;&#x30F3;&#x30B9;&#x30BF;&#x30F3;&#x30B9;&#x3067;&#x3059;&#x3002;</p>
+<pre><code class="lang-ruby"><span class="hljs-variable">@comment</span>  = <span class="hljs-variable">@photo</span>.comments.build(<span class="hljs-symbol">user_id:</span> current_user.id) <span class="hljs-keyword">if</span> current_user
+</code></pre>
+<p>Photo&#x306B;&#x95A2;&#x9023;&#x3055;&#x305B;&#x308B;&#x305F;&#x3081; <code>@photo.comments.build</code> &#x3068;&#x3057;&#x3066;&#x30A4;&#x30F3;&#x30B9;&#x30BF;&#x30F3;&#x30B9;&#x3092;&#x751F;&#x6210;&#x3057;&#x307E;&#x3059;&#x3002;
+build&#x306E;&#x5F15;&#x6570;&#x306B;user_id&#x3092;&#x6E21;&#x3057;&#x3066;&#x3001;User&#x3068;&#x3082;&#x95A2;&#x9023;&#x4ED8;&#x3051;&#x3057;&#x307E;&#x3059;&#x3002;
+&#x30ED;&#x30B0;&#x30A4;&#x30F3;&#x3057;&#x3066;&#x3044;&#x306A;&#x3044;&#x5834;&#x5408;&#x306F;&#x30B3;&#x30E1;&#x30F3;&#x30C8;&#x3067;&#x304D;&#x306A;&#x3044;&#x305F;&#x3081;&#x3001;@comment&#x306F;&#x4E0D;&#x8981;&#x3067;&#x3059;&#x3002;</p>
+<h2 id="view&#x306E;&#x4FEE;&#x6B63;">View&#x306E;&#x4FEE;&#x6B63;</h2>
+<p>app/views/photos/show.html.erb &#x3092;&#x30A8;&#x30C7;&#x30A3;&#x30BF;&#x3067;&#x958B;&#x304D;&#x307E;&#x3059;&#x3002;&#x3053;&#x306E;&#x30B3;&#x30FC;&#x30C9;&#x306E;&#x3042;&#x3068;&#x306B;</p>
+<pre><code>  &lt;% end %&gt;
+&lt;/div&gt;
+</code></pre><p>&#x3053;&#x306E;&#x30B3;&#x30FC;&#x30C9;&#x3092;&#x8FFD;&#x52A0;&#x3057;&#x307E;&#x3059;&#x3002;</p>
+<pre><code class="lang-html"><span class="hljs-tag">&lt;<span class="hljs-title">div</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-title">%</span> @<span class="hljs-attribute">comments.each</span> <span class="hljs-attribute">do</span> |<span class="hljs-attribute">comment</span>| %&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">div</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-title">strong</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-title">%=</span> <span class="hljs-attribute">comment.user.user_name</span> %&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-title">strong</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-title">br</span> /&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-title">p</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-title">%=</span> <span class="hljs-attribute">comment.body</span> %&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-title">p</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-title">%</span> <span class="hljs-attribute">if</span> <span class="hljs-attribute">user_signed_in</span>? &amp;&amp; <span class="hljs-attribute">comment.user</span> =<span class="hljs-value">=</span> <span class="hljs-attribute">current_user</span> %&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-title">p</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-title">%=</span> <span class="hljs-attribute">link_to</span> &apos;<span class="hljs-attribute">Delete</span>&apos;, <span class="hljs-attribute">comment_path</span>(<span class="hljs-attribute">comment</span>), <span class="hljs-attribute">method:</span> <span class="hljs-attribute">:delete</span> %&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-title">p</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-title">%</span> <span class="hljs-attribute">end</span> %&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-title">%</span> <span class="hljs-attribute">end</span> %&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-title">%</span> <span class="hljs-attribute">if</span> <span class="hljs-attribute">user_signed_in</span>? %&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">%=</span> <span class="hljs-attribute">render</span> &apos;<span class="hljs-attribute">comments</span>/<span class="hljs-attribute">form</span>&apos; %&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-title">%</span> <span class="hljs-attribute">end</span> %&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+</code></pre>
+<p>&#x30B3;&#x30E1;&#x30F3;&#x30C8;&#x3057;&#x305F;&#x30E6;&#x30FC;&#x30B6;&#x30FC;&#x306E;user_name&#x306F;&#x3001;comment&#x306E;&#x95A2;&#x9023;&#x304B;&#x3089;&#x53D6;&#x5F97;&#x3057;&#x307E;&#x3059;&#x3002;</p>
+<pre><code class="lang-html"><span class="hljs-tag">&lt;<span class="hljs-title">strong</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-title">%=</span> <span class="hljs-attribute">comment.user.user_name</span> %&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-title">strong</span>&gt;</span>
+</code></pre>
+<p>&#x30B3;&#x30E1;&#x30F3;&#x30C8;&#x3057;&#x305F;&#x30E6;&#x30FC;&#x30B6;&#x30FC;&#x306E;&#x307F;&#x3001;&#x30B3;&#x30E1;&#x30F3;&#x30C8;&#x306E;&#x524A;&#x9664;&#x304C;&#x3067;&#x304D;&#x308B;&#x3088;&#x3046;&#x306B;&#x3057;&#x307E;&#x3059;&#x3002;</p>
+<pre><code class="lang-html"><span class="hljs-tag">&lt;<span class="hljs-title">%</span> <span class="hljs-attribute">if</span> <span class="hljs-attribute">user_signed_in</span>? &amp;&amp; <span class="hljs-attribute">comment.user</span> =<span class="hljs-value">=</span> <span class="hljs-attribute">current_user</span> %&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-title">p</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-title">%=</span> <span class="hljs-attribute">link_to</span> &apos;<span class="hljs-attribute">Delete</span>&apos;, <span class="hljs-attribute">comment_path</span>(<span class="hljs-attribute">comment</span>), <span class="hljs-attribute">method:</span> <span class="hljs-attribute">:delete</span> %&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-title">p</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-title">%</span> <span class="hljs-attribute">end</span> %&gt;</span>
+</code></pre>
+<p>&#x30ED;&#x30B0;&#x30A4;&#x30F3;&#x3057;&#x3066;&#x3044;&#x306A;&#x3044;&#x3068;&#x3001;&#x30B3;&#x30E1;&#x30F3;&#x30C8;&#x3067;&#x304D;&#x306A;&#x3044;&#x3088;&#x3046;&#x306B;&#x3057;&#x307E;&#x3059;&#x3002;</p>
+<pre><code class="lang-html"><span class="hljs-tag">&lt;<span class="hljs-title">%</span> <span class="hljs-attribute">if</span> <span class="hljs-attribute">user_signed_in</span>? %&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-title">%=</span> <span class="hljs-attribute">render</span> &apos;<span class="hljs-attribute">comments</span>/<span class="hljs-attribute">form</span>&apos; %&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-title">%</span> <span class="hljs-attribute">end</span> %&gt;</span>
+</code></pre>
+<p>app/views/comments/_form.html.erb &#x3092;&#x30A8;&#x30C7;&#x30A3;&#x30BF;&#x3067;&#x958B;&#x304D;&#x307E;&#x3059;&#x3002;&#x3053;&#x308C;&#x3089;&#x306E;&#x30B3;&#x30FC;&#x30C9;&#x3092;&#x524A;&#x9664;&#x3057;</p>
+<pre><code class="lang-html"><span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;field&quot;</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-title">%=</span> <span class="hljs-attribute">f.label</span> <span class="hljs-attribute">:user_id</span> %&gt;</span><span class="hljs-tag">&lt;<span class="hljs-title">br</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-title">%=</span> <span class="hljs-attribute">f.number_field</span> <span class="hljs-attribute">:user_id</span> %&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;field&quot;</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-title">%=</span> <span class="hljs-attribute">f.label</span> <span class="hljs-attribute">:photo_id</span> %&gt;</span><span class="hljs-tag">&lt;<span class="hljs-title">br</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-title">%=</span> <span class="hljs-attribute">f.number_field</span> <span class="hljs-attribute">:photo_id</span> %&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+</code></pre>
+<p>&#x3053;&#x308C;&#x3089;&#x306E;&#x30B3;&#x30FC;&#x30C9;&#x3092;&#x8FFD;&#x52A0;&#x3057;&#x307E;&#x3059;&#x3002;</p>
+<pre><code class="lang-html"><span class="hljs-tag">&lt;<span class="hljs-title">%=</span> <span class="hljs-attribute">f.hidden_field</span> <span class="hljs-attribute">:user_id</span> %&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-title">%=</span> <span class="hljs-attribute">f.hidden_field</span> <span class="hljs-attribute">:photo_id</span> %&gt;</span>
+</code></pre>
+<p>user_id&#x3084;photo_id&#x306F;&#x8868;&#x793A;&#x3059;&#x308B;&#x5FC5;&#x8981;&#x304C;&#x306A;&#x3044;&#x306E;&#x3067;&#x3001;hidden&#x30D5;&#x30A3;&#x30FC;&#x30EB;&#x30C9;&#x3068;&#x3057;&#x3066;&#x4FDD;&#x6301;&#x3057;&#x307E;&#x3059;&#x3002;</p>
+<p>&#x30B5;&#x30FC;&#x30D0;&#x30FC;&#x3092;&#x8D77;&#x52D5;&#x3057;&#x3001;&#x30B3;&#x30E1;&#x30F3;&#x30C8;&#x3067;&#x304D;&#x308B;&#x304B;&#x78BA;&#x8A8D;&#x3057;&#x307E;&#x3059;&#x3002;&#x3059;&#x3067;&#x306B;&#x30B5;&#x30FC;&#x30D0;&#x30FC;&#x304C;&#x8D77;&#x52D5;&#x3057;&#x3066;&#x3044;&#x308B;&#x5834;&#x5408;&#x306F;&#x3001;&#x518D;&#x8D77;&#x52D5;&#x3057;&#x3066;&#x304F;&#x3060;&#x3055;&#x3044;&#x3002;</p>
+<pre><code class="lang-sh">rails s
+</code></pre>
+
+                    
+                    </section>
+                
+                
+                </div>
+            </div>
+        </div>
+
+        
+        <a href="../ja/004_login_check.html" class="navigation navigation-prev " aria-label="Previous page: ログインチェック"><i class="fa fa-angle-left"></i></a>
+        
+        
+        <a href="../ja/004_homework.html" class="navigation navigation-next " aria-label="Next page: 課題"><i class="fa fa-angle-right"></i></a>
+        
+    </div>
+</div>
+
+        
+<script src="../gitbook/app.js"></script>
+
+    
+    <script src="../gitbook/plugins/gitbook-plugin-search/lunr.min.js"></script>
+    
+
+    
+    <script src="../gitbook/plugins/gitbook-plugin-search/search.js"></script>
+    
+
+    
+    <script src="../gitbook/plugins/gitbook-plugin-sharing/buttons.js"></script>
+    
+
+    
+    <script src="../gitbook/plugins/gitbook-plugin-fontsettings/buttons.js"></script>
+    
+
+<script>
+require(["gitbook"], function(gitbook) {
+    var config = {"highlight":{},"search":{},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2}};
+    gitbook.start(config);
+});
+</script>
+
+        
+    </body>
+    
+</html>

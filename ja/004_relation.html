@@ -1,0 +1,581 @@
+<!DOCTYPE HTML>
+<html lang="en" >
+    
+    <head>
+        
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <title>UserとPhotoの関連付け | Rails Training</title>
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 2.5.2">
+        
+        
+        <meta name="HandheldFriendly" content="true"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+        <meta name="apple-mobile-web-app-capable" content="yes">
+        <meta name="apple-mobile-web-app-status-bar-style" content="black">
+        <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../gitbook/images/apple-touch-icon-precomposed-152.png">
+        <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
+        
+    <link rel="stylesheet" href="../gitbook/style.css">
+    
+        
+        <link rel="stylesheet" href="../gitbook/plugins/gitbook-plugin-highlight/website.css">
+        
+    
+        
+        <link rel="stylesheet" href="../gitbook/plugins/gitbook-plugin-search/search.css">
+        
+    
+        
+        <link rel="stylesheet" href="../gitbook/plugins/gitbook-plugin-fontsettings/website.css">
+        
+    
+    
+
+        
+    
+    
+    <link rel="next" href="../ja/004_login_check.html" />
+    
+    
+    <link rel="prev" href="../ja/004_facebook.html" />
+    
+
+        
+    </head>
+    <body>
+        
+        
+    <div class="book" data-level="5.3" data-chapter-title="UserとPhotoの関連付け" data-filepath="ja/004_relation.md" data-basepath=".." data-revision="Sat Jan 09 2016 13:10:52 GMT+0900 (JST)">
+    
+
+<div class="book-summary">
+    <nav role="navigation">
+        <ul class="summary">
+            
+            
+            
+            
+
+            
+
+            
+    
+        <li class="chapter " data-level="0" data-path="index.html">
+            
+                
+                    <a href="../index.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                        Introduction
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="1" data-path="ja/introduction.html">
+            
+                
+                    <a href="../ja/introduction.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>1.</b>
+                        
+                        はじめに
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="2" data-path="ja/001.html">
+            
+                
+                    <a href="../ja/001.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>2.</b>
+                        
+                        Ruby on Rails入門
+                    </a>
+            
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="2.1" data-path="ja/001_environment.html">
+            
+                
+                    <a href="../ja/001_environment.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>2.1.</b>
+                        
+                        環境構築
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="2.2" data-path="ja/001_rails.html">
+            
+                
+                    <a href="../ja/001_rails.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>2.2.</b>
+                        
+                        Ruby on Rails基礎
+                    </a>
+            
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="3" data-path="ja/002.html">
+            
+                
+                    <a href="../ja/002.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>3.</b>
+                        
+                        アプリケーション開発 1
+                    </a>
+            
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="3.1" data-path="ja/002_models.html">
+            
+                
+                    <a href="../ja/002_models.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>3.1.</b>
+                        
+                        基本的なモデルの実装
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="3.2" data-path="ja/002_image_upload.html">
+            
+                
+                    <a href="../ja/002_image_upload.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>3.2.</b>
+                        
+                        画像アップロード(CarrierWave)
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="3.3" data-path="ja/002_bootstrap.html">
+            
+                
+                    <a href="../ja/002_bootstrap.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>3.3.</b>
+                        
+                        デザインの適用(Bootstrapの導入)
+                    </a>
+            
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="4" data-path="ja/003.html">
+            
+                
+                    <a href="../ja/003.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>4.</b>
+                        
+                        アプリケーション開発 2
+                    </a>
+            
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="4.1" data-path="ja/003_twitter.html">
+            
+                
+                    <a href="../ja/003_twitter.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>4.1.</b>
+                        
+                        Twitter Developer登録
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="4.2" data-path="ja/003_devise.html">
+            
+                
+                    <a href="../ja/003_devise.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>4.2.</b>
+                        
+                        認証機能(Devise/Twitter)
+                    </a>
+            
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="5" data-path="ja/004.html">
+            
+                
+                    <a href="../ja/004.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>5.</b>
+                        
+                        アプリケーション開発 3
+                    </a>
+            
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="5.1" data-path="ja/004_user_info.html">
+            
+                
+                    <a href="../ja/004_user_info.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>5.1.</b>
+                        
+                        ユーザー情報の表示
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="5.2" data-path="ja/004_facebook.html">
+            
+                
+                    <a href="../ja/004_facebook.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>5.2.</b>
+                        
+                        認証機能(Devise/Facebook)
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter active" data-level="5.3" data-path="ja/004_relation.html">
+            
+                
+                    <a href="../ja/004_relation.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>5.3.</b>
+                        
+                        UserとPhotoの関連付け
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="5.4" data-path="ja/004_login_check.html">
+            
+                
+                    <a href="../ja/004_login_check.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>5.4.</b>
+                        
+                        ログインチェック
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="5.5" data-path="ja/004_comments.html">
+            
+                
+                    <a href="../ja/004_comments.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>5.5.</b>
+                        
+                        コメント機能
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="5.6" data-path="ja/004_homework.html">
+            
+                
+                    <a href="../ja/004_homework.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>5.6.</b>
+                        
+                        課題
+                    </a>
+            
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="6" data-path="ja/005.html">
+            
+                
+                    <a href="../ja/005.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>6.</b>
+                        
+                        総合課題
+                    </a>
+            
+            
+        </li>
+    
+
+
+            
+            <li class="divider"></li>
+            <li>
+                <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+                    Published with GitBook
+                </a>
+            </li>
+            
+        </ul>
+    </nav>
+</div>
+
+    <div class="book-body">
+        <div class="body-inner">
+            <div class="book-header" role="navigation">
+    <!-- Actions Left -->
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href="../" >Rails Training</a>
+    </h1>
+</div>
+
+            <div class="page-wrapper" tabindex="-1" role="main">
+                <div class="page-inner">
+                
+                
+                    <section class="normal" id="section-">
+                    
+                        <h1 id="user&#x3068;photo&#x306E;&#x95A2;&#x9023;&#x4ED8;&#x3051;">User&#x3068;Photo&#x306E;&#x95A2;&#x9023;&#x4ED8;&#x3051;</h1>
+<p>&#x30E6;&#x30FC;&#x30B6;&#x30FC;&#x3068;&#x5199;&#x771F;&#x306E;&#x95A2;&#x9023;&#x4ED8;&#x3051;&#x3092;&#x884C;&#x3044;&#x307E;&#x3059;&#x3002;&#x3059;&#x3067;&#x306B;&#x5B58;&#x5728;&#x3059;&#x308B;&#x30E2;&#x30C7;&#x30EB;&#x306B;&#x5BFE;&#x3057;&#x3066;&#x5909;&#x66F4;&#x3092;&#x884C;&#x3044;&#x3001;&#x95A2;&#x9023;&#x4ED8;&#x3051;&#x304C;&#x3067;&#x304D;&#x308B;&#x3088;&#x3046;&#x306B;&#x3057;&#x3066;&#x3044;&#x304D;&#x307E;&#x3059;&#x3002;</p>
+<h2 id="&#x30AB;&#x30E9;&#x30E0;&#x8FFD;&#x52A0;">&#x30AB;&#x30E9;&#x30E0;&#x8FFD;&#x52A0;</h2>
+<p>photos&#x30C6;&#x30FC;&#x30D6;&#x30EB;&#x306B;user_id&#x3068;&#x3044;&#x3046;&#x30AB;&#x30E9;&#x30E0;&#x3092;&#x8FFD;&#x52A0;&#x3057;&#x307E;&#x3059;&#x3002;</p>
+<pre><code class="lang-sh">rails g migration add_column_to_photos user_id
+</code></pre>
+<p>DB&#x306B;&#x5909;&#x66F4;&#x3092;&#x53CD;&#x6620;&#x3055;&#x305B;&#x307E;&#x3059;&#x3002;</p>
+<pre><code class="lang-sh">rake db:migrate
+</code></pre>
+<h2 id="user&#x3068;photo&#x306E;&#x95A2;&#x9023;&#x4ED8;&#x3051;">User&#x3068;Photo&#x306E;&#x95A2;&#x9023;&#x4ED8;&#x3051;</h2>
+<p>User&#x3068;Photo&#x306E;&#x95A2;&#x9023;&#x4ED8;&#x3051;&#x3092;&#x884C;&#x3044;&#x307E;&#x3059;&#x3002;</p>
+<p>app/models/user.rb&#x3092;&#x30A8;&#x30C7;&#x30A3;&#x30BF;&#x3067;&#x958B;&#x304D;&#x307E;&#x3059;&#x3002;&#x3053;&#x306E;&#x884C;&#x306E;&#x3042;&#x3068;&#x306B;</p>
+<pre><code class="lang-ruby">devise <span class="hljs-symbol">:database_authenticatable</span>, <span class="hljs-symbol">:registerable</span>,
+       <span class="hljs-symbol">:recoverable</span>, <span class="hljs-symbol">:rememberable</span>, <span class="hljs-symbol">:trackable</span>, <span class="hljs-symbol">:validatable</span>, <span class="hljs-symbol">:omniauthable</span>
+</code></pre>
+<p>&#x3053;&#x306E;&#x884C;&#x3092;&#x8FFD;&#x52A0;&#x3057;&#x307E;&#x3059;&#x3002;</p>
+<pre><code class="lang-ruby">has_many <span class="hljs-symbol">:photos</span>
+</code></pre>
+<p>app/models/photo.rb&#x3092;&#x30A8;&#x30C7;&#x30A3;&#x30BF;&#x3067;&#x958B;&#x304D;&#x307E;&#x3059;&#x3002;&#x3053;&#x306E;&#x884C;&#x306E;&#x3042;&#x3068;&#x306B;</p>
+<pre><code class="lang-ruby">mount_uploader <span class="hljs-symbol">:image</span>, <span class="hljs-constant">ImageUploader</span>
+</code></pre>
+<p>&#x3053;&#x306E;&#x884C;&#x3092;&#x8FFD;&#x52A0;&#x3057;&#x307E;&#x3059;&#x3002;</p>
+<pre><code class="lang-ruby">belongs_to <span class="hljs-symbol">:user</span>
+</code></pre>
+<p>app/controllers/photos_controller.rb&#x3092;&#x30A8;&#x30C7;&#x30A3;&#x30BF;&#x3067;&#x958B;&#x304D;&#x307E;&#x3059;&#x3002;&#x3053;&#x306E;&#x884C;&#x3092;</p>
+<pre><code class="lang-ruby"><span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">new</span></span>
+  <span class="hljs-variable">@photo</span> = <span class="hljs-constant">Photo</span>.new
+<span class="hljs-keyword">end</span>
+</code></pre>
+<p>&#x3053;&#x306E;&#x3088;&#x3046;&#x306B;&#x5909;&#x66F4;&#x3057;&#x307E;&#x3059;&#x3002;</p>
+<pre><code class="lang-ruby"><span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">new</span></span>
+  <span class="hljs-variable">@photo</span> = current_user.photos.build
+<span class="hljs-keyword">end</span>
+</code></pre>
+<p>&#x3053;&#x306E;&#x884C;&#x3092;</p>
+<pre><code class="lang-ruby"><span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">photo_params</span></span>
+  params.<span class="hljs-keyword">require</span>(<span class="hljs-symbol">:photo</span>).permit(<span class="hljs-symbol">:image</span>, <span class="hljs-symbol">:caption</span>)
+<span class="hljs-keyword">end</span>
+</code></pre>
+<p>&#x3053;&#x306E;&#x3088;&#x3046;&#x306B;&#x5909;&#x66F4;&#x3057;&#x307E;&#x3059;&#x3002;</p>
+<pre><code class="lang-ruby"><span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">photo_params</span></span>
+  params.<span class="hljs-keyword">require</span>(<span class="hljs-symbol">:photo</span>).permit(<span class="hljs-symbol">:image</span>, <span class="hljs-symbol">:caption</span>, <span class="hljs-symbol">:user_id</span>)
+<span class="hljs-keyword">end</span>
+</code></pre>
+<p>Photo&#x306F;id&#x304B;&#x3089;&#x691C;&#x7D22;&#x3057;&#x3066;&#x3044;&#x307E;&#x3057;&#x305F;&#x3002;&#x30E6;&#x30FC;&#x30B6;&#x30FC;&#x306B;&#x95A2;&#x9023;&#x4ED8;&#x304F;&#x30C7;&#x30FC;&#x30BF;&#x3092;&#x53D6;&#x5F97;&#x3059;&#x308B;&#x3088;&#x3046;&#x306B;&#x3057;&#x307E;&#x3059;&#x3002;&#x3053;&#x306E;&#x30B3;&#x30FC;&#x30C9;&#x3092;</p>
+<pre><code class="lang-ruby"><span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">set_photo</span></span>
+  <span class="hljs-variable">@photo</span> = <span class="hljs-constant">Photo</span>.find(params[<span class="hljs-symbol">:id</span>])
+<span class="hljs-keyword">end</span>
+</code></pre>
+<p>&#x3053;&#x306E;&#x3088;&#x3046;&#x306B;&#x5909;&#x66F4;&#x3057;&#x307E;&#x3059;&#x3002;</p>
+<pre><code class="lang-ruby"><span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">set_current_user_photo</span></span>
+  <span class="hljs-variable">@photo</span> = current_user.photos.find(params[<span class="hljs-symbol">:id</span>])
+<span class="hljs-keyword">end</span>
+</code></pre>
+<p>&#x3053;&#x306E;&#x884C;&#x3092;</p>
+<pre><code class="lang-ruby">before_action <span class="hljs-symbol">:set_photo</span>, <span class="hljs-symbol">only:</span> [<span class="hljs-symbol">:show</span>, <span class="hljs-symbol">:edit</span>, <span class="hljs-symbol">:update</span>, <span class="hljs-symbol">:destroy</span>]
+</code></pre>
+<p>&#x3053;&#x306E;&#x3088;&#x3046;&#x306B;&#x5909;&#x66F4;&#x3057;&#x307E;&#x3059;&#x3002;</p>
+<pre><code class="lang-ruby">before_action <span class="hljs-symbol">:set_current_user_photo</span>, <span class="hljs-symbol">only:</span> [<span class="hljs-symbol">:edit</span>, <span class="hljs-symbol">:update</span>, <span class="hljs-symbol">:destroy</span>]
+</code></pre>
+<p>show&#x3067;&#x306F;&#x30E6;&#x30FC;&#x30B6;&#x30FC;&#x306B;&#x7D10;&#x4ED8;&#x304B;&#x306A;&#x3044;&#x30C7;&#x30FC;&#x30BF;&#x3092;&#x8868;&#x793A;&#x3057;&#x3066;&#x3082;&#x554F;&#x984C;&#x306A;&#x3044;&#x305F;&#x3081;&#x3001;&#x3053;&#x306E;&#x30B3;&#x30FC;&#x30C9;&#x3092;</p>
+<pre><code class="lang-ruby"><span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">show</span></span>
+<span class="hljs-keyword">end</span>
+</code></pre>
+<p>&#x3053;&#x306E;&#x3088;&#x3046;&#x306B;&#x5909;&#x66F4;&#x3057;&#x307E;&#x3059;&#x3002;</p>
+<pre><code class="lang-ruby"><span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">show</span></span>
+  <span class="hljs-variable">@photo</span> = <span class="hljs-constant">Photo</span>.find(params[<span class="hljs-symbol">:id</span>])
+<span class="hljs-keyword">end</span>
+</code></pre>
+<p>app/views/photos/_form.html.erb&#x3092;&#x30A8;&#x30C7;&#x30A3;&#x30BF;&#x3067;&#x958B;&#x304D;&#x307E;&#x3059;&#x3002;&#x3053;&#x306E;&#x884C;&#x306E;&#x3042;&#x3068;&#x306B;</p>
+<pre><code class="lang-html"><span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;field&quot;</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-title">%=</span> <span class="hljs-attribute">f.label</span> <span class="hljs-attribute">:caption</span> %&gt;</span><span class="hljs-tag">&lt;<span class="hljs-title">br</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-title">%=</span> <span class="hljs-attribute">f.text_area</span> <span class="hljs-attribute">:caption</span> %&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+</code></pre>
+<p>&#x3053;&#x306E;&#x884C;&#x3092;&#x8FFD;&#x52A0;&#x3057;&#x307E;&#x3059;&#x3002;</p>
+<pre><code class="lang-html"><span class="hljs-tag">&lt;<span class="hljs-title">%=</span> <span class="hljs-attribute">f.hidden_field</span> <span class="hljs-attribute">:user_id</span> %&gt;</span>
+</code></pre>
+<p>&#x30B5;&#x30FC;&#x30D0;&#x30FC;&#x3092;&#x8D77;&#x52D5;&#x3057;&#x3001;&#x30ED;&#x30B0;&#x30A4;&#x30F3;&#x3067;&#x304D;&#x308B;&#x304B;&#x78BA;&#x8A8D;&#x3057;&#x307E;&#x3059;&#x3002;&#x3059;&#x3067;&#x306B;&#x30B5;&#x30FC;&#x30D0;&#x30FC;&#x304C;&#x8D77;&#x52D5;&#x3057;&#x3066;&#x3044;&#x308B;&#x5834;&#x5408;&#x306F;&#x3001;&#x518D;&#x8D77;&#x52D5;&#x3057;&#x3066;&#x304F;&#x3060;&#x3055;&#x3044;&#x3002;</p>
+<pre><code class="lang-sh">rails s
+</code></pre>
+<p>&#x30ED;&#x30B0;&#x30A4;&#x30F3;&#x5F8C;&#x306B;&#x65B0;&#x3057;&#x3044;&#x5199;&#x771F;&#x3092;&#x767B;&#x9332;&#x3057;&#x3001;&#x95A2;&#x9023;&#x4ED8;&#x3051;&#x3089;&#x308C;&#x3066;&#x3044;&#x308B;&#x304B;&#x78BA;&#x8A8D;&#x3057;&#x307E;&#x3059;&#x3002;&#x30B5;&#x30FC;&#x30D0;&#x30FC;&#x3092;&#x8D77;&#x52D5;&#x3057;&#x305F;&#x30BF;&#x30FC;&#x30DF;&#x30CA;&#x30EB;&#x3068;&#x306F;&#x5225;&#x306E;&#x30BF;&#x30FC;&#x30DF;&#x30CA;&#x30EB;&#x3067;&#x3001;Rails&#x30B3;&#x30F3;&#x30BD;&#x30FC;&#x30EB;&#x3092;&#x8D77;&#x52D5;&#x3057;&#x307E;&#x3059;&#x3002;</p>
+<pre><code class="lang-sh">rails c
+</code></pre>
+<p>&#x6700;&#x5F8C;&#x306E;&#x5199;&#x771F;&#x306E;&#x30E6;&#x30FC;&#x30B6;&#x30FC;&#x3092;&#x78BA;&#x8A8D;&#x3057;&#x307E;&#x3059;&#x3002;</p>
+<pre><code>Photo.last.user
+</code></pre><p>&#x3053;&#x306E;&#x3088;&#x3046;&#x306B;&#x30E6;&#x30FC;&#x30B6;&#x30FC;&#x306E;&#x60C5;&#x5831;&#x304C;&#x8868;&#x793A;&#x3055;&#x308C;&#x3066;&#x3044;&#x308C;&#x3070;&#x3001;User&#x3068;Photo&#x306E;&#x95A2;&#x9023;&#x4ED8;&#x3051;&#x304C;&#x3067;&#x304D;&#x3066;&#x3044;&#x307E;&#x3059;&#x3002;</p>
+<pre><code class="lang-ruby">[<span class="hljs-number">1</span>] pry(main)&gt; <span class="hljs-constant">Photo</span>.last.user
+  <span class="hljs-constant">Photo</span> <span class="hljs-constant">Load</span> (<span class="hljs-number">0</span>.<span class="hljs-number">2</span>ms)  <span class="hljs-constant">SELECT</span>  <span class="hljs-string">&quot;photos&quot;</span>.* <span class="hljs-constant">FROM</span> <span class="hljs-string">&quot;photos&quot;</span>  <span class="hljs-constant">ORDER</span> <span class="hljs-constant">BY</span> <span class="hljs-string">&quot;photos&quot;</span>.<span class="hljs-string">&quot;id&quot;</span> <span class="hljs-constant">DESC</span> <span class="hljs-constant">LIMIT</span> <span class="hljs-number">1</span>
+  <span class="hljs-constant">User</span> <span class="hljs-constant">Load</span> (<span class="hljs-number">0</span>.<span class="hljs-number">2</span>ms)  <span class="hljs-constant">SELECT</span>  <span class="hljs-string">&quot;users&quot;</span>.* <span class="hljs-constant">FROM</span> <span class="hljs-string">&quot;users&quot;</span> <span class="hljs-constant">WHERE</span> <span class="hljs-string">&quot;users&quot;</span>.<span class="hljs-string">&quot;id&quot;</span> = ? <span class="hljs-constant">LIMIT</span> <span class="hljs-number">1</span>  [[<span class="hljs-string">&quot;id&quot;</span>, <span class="hljs-number">1</span>]]
+<span class="hljs-comment">#&lt;User:0x007f8821a5e460&gt; {</span>
+                        <span class="hljs-symbol">:id</span> =&gt; <span class="hljs-number">1</span>,
+                     <span class="hljs-symbol">:email</span> =&gt; <span class="hljs-string">&quot;0000000-twitter@example.com&quot;</span>,
+        <span class="hljs-symbol">:encrypted_password</span> =&gt; <span class="hljs-string">&quot;xxxx&quot;</span>,
+      <span class="hljs-symbol">:reset_password_token</span> =&gt; <span class="hljs-keyword">nil</span>,
+    <span class="hljs-symbol">:reset_password_sent_at</span> =&gt; <span class="hljs-keyword">nil</span>,
+       <span class="hljs-symbol">:remember_created_at</span> =&gt; <span class="hljs-keyword">nil</span>,
+             <span class="hljs-symbol">:sign_in_count</span> =&gt; <span class="hljs-number">5</span>,
+        <span class="hljs-symbol">:current_sign_in_at</span> =&gt; <span class="hljs-constant">Tue</span>, <span class="hljs-number">05</span> <span class="hljs-constant">Jan</span> <span class="hljs-number">2016</span> <span class="hljs-number">22</span><span class="hljs-symbol">:</span><span class="hljs-number">34</span><span class="hljs-symbol">:</span><span class="hljs-number">41</span> <span class="hljs-constant">UTC</span> +<span class="hljs-number">00</span><span class="hljs-symbol">:</span><span class="hljs-number">00</span>,
+           <span class="hljs-symbol">:last_sign_in_at</span> =&gt; <span class="hljs-constant">Tue</span>, <span class="hljs-number">05</span> <span class="hljs-constant">Jan</span> <span class="hljs-number">2016</span> <span class="hljs-number">00</span><span class="hljs-symbol">:</span><span class="hljs-number">28</span><span class="hljs-symbol">:</span><span class="hljs-number">43</span> <span class="hljs-constant">UTC</span> +<span class="hljs-number">00</span><span class="hljs-symbol">:</span><span class="hljs-number">00</span>,
+        <span class="hljs-symbol">:current_sign_in_ip</span> =&gt; <span class="hljs-string">&quot;::1&quot;</span>,
+           <span class="hljs-symbol">:last_sign_in_ip</span> =&gt; <span class="hljs-string">&quot;::1&quot;</span>,
+                <span class="hljs-symbol">:created_at</span> =&gt; <span class="hljs-constant">Sat</span>, <span class="hljs-number">19</span> <span class="hljs-constant">Dec</span> <span class="hljs-number">2015</span> <span class="hljs-number">04</span><span class="hljs-symbol">:</span><span class="hljs-number">38</span><span class="hljs-symbol">:</span><span class="hljs-number">22</span> <span class="hljs-constant">UTC</span> +<span class="hljs-number">00</span><span class="hljs-symbol">:</span><span class="hljs-number">00</span>,
+                <span class="hljs-symbol">:updated_at</span> =&gt; <span class="hljs-constant">Tue</span>, <span class="hljs-number">05</span> <span class="hljs-constant">Jan</span> <span class="hljs-number">2016</span> <span class="hljs-number">22</span><span class="hljs-symbol">:</span><span class="hljs-number">34</span><span class="hljs-symbol">:</span><span class="hljs-number">41</span> <span class="hljs-constant">UTC</span> +<span class="hljs-number">00</span><span class="hljs-symbol">:</span><span class="hljs-number">00</span>,
+                  <span class="hljs-symbol">:provider</span> =&gt; <span class="hljs-string">&quot;twitter&quot;</span>,
+                       <span class="hljs-symbol">:uid</span> =&gt; <span class="hljs-string">&quot;0000000&quot;</span>,
+                 <span class="hljs-symbol">:user_name</span> =&gt; <span class="hljs-string">&quot;xxxxx&quot;</span>,
+                <span class="hljs-symbol">:avatar_url</span> =&gt; <span class="hljs-string">&quot;http://pbs.twimg.com/profile_images/xxx.jpg&quot;</span>
+}
+</code></pre>
+<p>&#x3053;&#x306E;&#x72B6;&#x614B;&#x3067;&#x306F;&#x3001;&#x30ED;&#x30B0;&#x30A4;&#x30F3;&#x305B;&#x305A;&#x306B;&#x5199;&#x771F;&#x3092;&#x767B;&#x9332;&#x3057;&#x3088;&#x3046;&#x3068;&#x3059;&#x308B;&#x3068;&#x30A8;&#x30E9;&#x30FC;&#x304C;&#x767A;&#x751F;&#x3057;&#x307E;&#x3059;&#x3002;&#x6B21;&#x306F;&#x30ED;&#x30B0;&#x30A4;&#x30F3;&#x30C1;&#x30A7;&#x30C3;&#x30AF;&#x3092;&#x5B9F;&#x88C5;&#x3057;&#x307E;&#x3059;&#x3002;</p>
+<p>&#x3053;&#x308C;&#x307E;&#x3067;&#x306B;&#x4F5C;&#x6210;&#x3057;&#x305F;&#x30C7;&#x30FC;&#x30BF;&#x306F;&#x3001;User&#x3068;Photo&#x304C;&#x95A2;&#x9023;&#x4ED8;&#x3051;&#x3089;&#x308C;&#x3066;&#x3044;&#x306A;&#x3044;&#x305F;&#x3081;&#x524A;&#x9664;&#x3057;&#x307E;&#x3059;&#x3002;Rails&#x30B3;&#x30F3;&#x30BD;&#x30FC;&#x30EB;&#x3067;&#x4EE5;&#x4E0B;&#x306E;&#x30B3;&#x30FC;&#x30C9;&#x3092;&#x5B9F;&#x884C;&#x3059;&#x308B;&#x3068;&#x3001;&#x3059;&#x3079;&#x3066;&#x306E;Photo&#x304C;&#x524A;&#x9664;&#x3067;&#x304D;&#x307E;&#x3059;&#x3002;</p>
+<pre><code>Photo.all.each(&amp;:destroy)
+</code></pre>
+                    
+                    </section>
+                
+                
+                </div>
+            </div>
+        </div>
+
+        
+        <a href="../ja/004_facebook.html" class="navigation navigation-prev " aria-label="Previous page: 認証機能(Devise/Facebook)"><i class="fa fa-angle-left"></i></a>
+        
+        
+        <a href="../ja/004_login_check.html" class="navigation navigation-next " aria-label="Next page: ログインチェック"><i class="fa fa-angle-right"></i></a>
+        
+    </div>
+</div>
+
+        
+<script src="../gitbook/app.js"></script>
+
+    
+    <script src="../gitbook/plugins/gitbook-plugin-search/lunr.min.js"></script>
+    
+
+    
+    <script src="../gitbook/plugins/gitbook-plugin-search/search.js"></script>
+    
+
+    
+    <script src="../gitbook/plugins/gitbook-plugin-sharing/buttons.js"></script>
+    
+
+    
+    <script src="../gitbook/plugins/gitbook-plugin-fontsettings/buttons.js"></script>
+    
+
+<script>
+require(["gitbook"], function(gitbook) {
+    var config = {"highlight":{},"search":{},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2}};
+    gitbook.start(config);
+});
+</script>
+
+        
+    </body>
+    
+</html>
