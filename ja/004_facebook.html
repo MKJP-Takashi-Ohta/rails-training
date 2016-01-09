@@ -48,7 +48,7 @@
     <body>
         
         
-    <div class="book" data-level="5.2" data-chapter-title="認証機能(Devise/Facebook)" data-filepath="ja/004_facebook.md" data-basepath=".." data-revision="Sat Jan 09 2016 13:10:52 GMT+0900 (JST)">
+    <div class="book" data-level="5.2" data-chapter-title="認証機能(Devise/Facebook)" data-filepath="ja/004_facebook.md" data-basepath=".." data-revision="Sat Jan 09 2016 14:28:55 GMT+0900 (JST)">
     
 
 <div class="book-summary">
@@ -464,12 +464,12 @@
   &lt;&lt;<span class="hljs-symbol">:</span> *default_twitter
   &lt;&lt;<span class="hljs-symbol">:</span> *default_facebook
 </code></pre>
-<p>&#x672C;&#x756A;&#x74B0;&#x5883;&#x3067;&#x306F;&#x74B0;&#x5883;&#x5909;&#x6570;&#x304B;&#x3089;twitter&#x8A8D;&#x8A3C;&#x306E;&#x60C5;&#x5831;&#x3092;&#x53D6;&#x5F97;&#x3059;&#x308B;&#x3088;&#x3046;&#x306B;&#x3057;&#x307E;&#x3059;&#x3002;&#x3053;&#x306E;&#x884C;&#x306E;&#x3042;&#x3068;&#x306B;</p>
-<pre><code class="lang-ruby"><span class="hljs-symbol">twitter_api_secret:</span> &lt;%= <span class="hljs-constant">ENV</span>[<span class="hljs-string">&quot;TWITTER_API_SECRET&quot;</span>] %&gt;
+<p>&#x672C;&#x756A;&#x74B0;&#x5883;&#x3067;&#x306F;&#x74B0;&#x5883;&#x5909;&#x6570;&#x304B;&#x3089;Facebook&#x8A8D;&#x8A3C;&#x306E;&#x60C5;&#x5831;&#x3092;&#x53D6;&#x5F97;&#x3059;&#x308B;&#x3088;&#x3046;&#x306B;&#x3057;&#x307E;&#x3059;&#x3002;&#x3053;&#x306E;&#x884C;&#x306E;&#x3042;&#x3068;&#x306B;</p>
+<pre><code class="lang-ruby"><span class="hljs-symbol">twitter_api_secret:</span> &lt;%= <span class="hljs-constant">ENV</span>[<span class="hljs-string">&quot;FACEBOOK_API_SECRET&quot;</span>] %&gt;
 </code></pre>
 <p>&#x3053;&#x306E;&#x884C;&#x3092;&#x8FFD;&#x52A0;&#x3057;&#x307E;&#x3059;&#x3002;</p>
-<pre><code class="lang-ruby"><span class="hljs-symbol">facebook_api_key:</span> &lt;%= <span class="hljs-constant">ENV</span>[<span class="hljs-string">&quot;TWITTER_API_KEY&quot;</span>] %&gt;
-<span class="hljs-symbol">facebook_api_secret:</span> &lt;%= <span class="hljs-constant">ENV</span>[<span class="hljs-string">&quot;TWITTER_API_SECRET&quot;</span>] %&gt;
+<pre><code class="lang-ruby"><span class="hljs-symbol">facebook_api_key:</span> &lt;%= <span class="hljs-constant">ENV</span>[<span class="hljs-string">&quot;FACEBOOK_API_KEY&quot;</span>] %&gt;
+<span class="hljs-symbol">facebook_api_secret:</span> &lt;%= <span class="hljs-constant">ENV</span>[<span class="hljs-string">&quot;FACEBOOK_API_SECRET&quot;</span>] %&gt;
 </code></pre>
 <p>config/initializers/devise.rb&#x3067;&#x3001;Facebook&#x8A8D;&#x8A3C;&#x3067;&#x5229;&#x7528;&#x3059;&#x308B;Key&#x3092;&#x8A2D;&#x5B9A;&#x3057;&#x307E;&#x3059;&#x3002;&#x3053;&#x306E;&#x884C;&#x306E;&#x3042;&#x3068;&#x306B;</p>
 <pre><code class="lang-ruby">  <span class="hljs-constant">Rails</span>.application.secrets.twitter_api_secret
@@ -492,7 +492,7 @@ end
 <pre><code class="lang-ruby"><span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">self</span>.<span class="hljs-title">find_or_create_from_oauth</span><span class="hljs-params">(auth)</span></span>
   <span class="hljs-constant">User</span>.find_or_create_by(<span class="hljs-symbol">provider:</span> auth.provider, <span class="hljs-symbol">uid:</span> auth.uid) <span class="hljs-keyword">do</span> |user|
     user.user_name  = auth.info.nickname || auth.info.name
-    user.avatar_url = auth.info.image || auth.info.image
+    user.avatar_url = auth.info.image
     user.email      = <span class="hljs-constant">User</span>.dummy_email(auth)
     user.password   = <span class="hljs-constant">Devise</span>.friendly_token[<span class="hljs-number">0</span>, <span class="hljs-number">20</span>]
   <span class="hljs-keyword">end</span>
